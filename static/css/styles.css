@@ -10,13 +10,15 @@ body {
 
 header {
     background-color: var(--primary-color);
-    padding: 1rem 2rem;
+    padding: 0.1rem 5rem;
+    border-bottom: 1px solid var(--accent-color);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 }
 
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+nav ul li a {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 nav img {
@@ -47,9 +49,9 @@ main {
 
 footer {
     background-color: var(--secondary-color);
-    color: var(--primary-color);
+    color: var(--text-color);
     text-align: center;
-    padding: 1rem;
+    padding: 0.1rem;
     margin-top: 3rem;
     font-size: 0.9rem;
 }
@@ -72,3 +74,44 @@ button:hover, input[type="submit"]:hover {
 form p {
     margin-bottom: 1rem;
 }
+
+.logo-top-container {
+    text-align: center;
+    margin: 1rem;
+    padding-bottom: 1rem;
+}
+
+.logo-top-img {
+    height: 240px; /* ajusta según preferencia */
+    max-width: 100%;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  flex-wrap: nowrap;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.nav-lang {
+  display: flex;
+  gap: 0.5rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+

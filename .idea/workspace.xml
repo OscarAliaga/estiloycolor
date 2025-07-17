@@ -4,20 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1924fea6-b47c-4610-ac9b-e49255c23965" name="Changes" comment="&quot;Estructura base proyecto página web Color y Estilo&quot;">
+    <list default="true" id="1924fea6-b47c-4610-ac9b-e49255c23965" name="Changes" comment="&quot;Avances en estructura e internacionalización&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/colors.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/colors.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/portfolio.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/portfolio.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/services.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/services.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +109,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1752723396301</updated>
-      <workItem from="1752723397366" duration="6931000" />
+      <workItem from="1752723397366" duration="10419000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;Estructura base proyecto página web Color y Estilo&quot;">
       <option name="closed" value="true" />
@@ -128,7 +119,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752724126702</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="&quot;Avances en estructura e internacionalización&quot;">
+      <option name="closed" value="true" />
+      <created>1752730383559</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1752730383559</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,9 +151,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&quot;Estructura base proyecto página web Color y Estilo&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Estructura base proyecto página web Color y Estilo&quot;" />
+    <MESSAGE value="&quot;Avances en estructura e internacionalización&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Avances en estructura e internacionalización&quot;" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/estiloycolor$app.coverage" NAME="app Coverage Results" MODIFIED="1752730062083" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/estiloycolor$app.coverage" NAME="app Coverage Results" MODIFIED="1752731927772" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
