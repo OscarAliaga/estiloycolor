@@ -1,5 +1,6 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap');
 
 body {
     margin: 0;
@@ -19,6 +20,14 @@ nav ul li a {
     font-size: 1.1rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--accent-color);
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
 }
 
 nav img {
@@ -33,27 +42,18 @@ nav ul {
     padding: 0;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: var(--accent-color);
-    font-weight: 600;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
 main {
     padding: 2rem;
 }
 
 footer {
+    font-family: 'Lora', serif;
     background-color: var(--secondary-color);
     color: var(--text-color);
     text-align: center;
     padding: 0.1rem;
     margin-top: 3rem;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
 button, input[type="submit"] {
@@ -64,6 +64,7 @@ button, input[type="submit"] {
     border-radius: 6px;
     font-weight: 600;
     cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
 }
 
 button:hover, input[type="submit"]:hover {
@@ -82,7 +83,7 @@ form p {
 }
 
 .logo-top-img {
-    height: 240px; /* ajusta según preferencia */
+    height: 240px;
     max-width: 100%;
 }
 
@@ -106,6 +107,7 @@ form p {
   text-decoration: none;
   color: var(--accent-color);
   font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .nav-lang {
@@ -115,3 +117,18 @@ form p {
   white-space: nowrap;
 }
 
+/* Títulos principales */
+h1, h2, h3 {
+    font-family: 'Lora', serif;
+    font-weight: 600;
+    margin-top: 0;
+}
+
+/* Bloques destacados */
+.callout {
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 1rem 0;
+}
