@@ -19,7 +19,7 @@ header {
 nav ul li a {
     font-size: 1.1rem;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     text-decoration: none;
@@ -131,4 +131,108 @@ h1, h2, h3 {
     font-weight: 600;
     font-size: 1.1rem;
     margin: 1rem 0;
+}
+
+.hero-section {
+  background-image: url('/static/img/hero.jpeg');
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.hero-overlay-gradient {
+  width: 100%;
+  height: 95%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 700px;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 1rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: 450;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.hero-button {
+  background-color: #f48fb1;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.5s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0rem;
+}
+
+.hero-button:hover {
+  background-color: #d243e8;
+}
+
+/* Animación */
+.fade-in-up {
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  .hero-buttons {
+    flex-direction: column;
+  }
+}
+
+.footer-line {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+  line-height: 1.4;
+  font-size: 0.9rem;
 }

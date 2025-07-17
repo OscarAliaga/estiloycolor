@@ -1,8 +1,8 @@
 /* Paleta de colores principal */
 :root {
     --primary-color: #ffffff;
-    --secondary-color: #f1d4ca;
-    --accent-color: #797779;
+    --secondary-color: #cecccc;
+    --accent-color: #000000;
     --background-color: #ffffff;
-    --text-color: #444444;
+    --text-color: #000000;
 }

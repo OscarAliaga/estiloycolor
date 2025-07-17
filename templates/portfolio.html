@@ -1,6 +1,24 @@
+<section id="portafolio" class="portfolio-section">
 {% extends 'base.html' %}
 {% block title %}{{ _('Portafolio') }}{% endblock %}
+
 {% block content %}
-<h1>{{ _('Portafolio') }}</h1>
-<p>{{ _('Conoce algunos de los proyectos y transformaciones que he acompañado.') }}</p>
+<section id="portafolio" class="portfolio-section">
+  <div class="section-content">
+    <h2>{{ _('Portafolio') }}</h2>
+    <p>{{ _('Conoce algunos de los proyectos y transformaciones que he acompañado.') }}</p>
+
+    <!-- Aquí podrías insertar un carrusel, galería o tarjetas de casos -->
+    <!-- Ejemplo: -->
+    <!--
+    <div class="portfolio-gallery">
+      <img src="{{ url_for('static', filename='images/caso1.jpg') }}" alt="Caso 1">
+      <img src="{{ url_for('static', filename='images/caso2.jpg') }}" alt="Caso 2">
+    </div>
+    -->
+
+    <a href="{{ url_for('contact') }}" class="hero-button">{{ _('Agenda tu asesoría') }}</a>
+  </div>
+</section>
 {% endblock %}
+
