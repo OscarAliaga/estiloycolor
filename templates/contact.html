@@ -1,3 +1,21 @@
 {% extends 'base.html' %}
-{% block title %}Contacto{% endblock %}
-{% block content %}<h1>Contacto</h1>{% endblock %}
+{% block title %}{{ _('Contacto') }}{% endblock %}
+{% block content %}
+<h1>{{ _('Contacto') }}</h1>
+<form method="POST" action="{{ url_for('contact', lang=get_locale()) }}">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ _('Nombre') }}<br>
+        {{ form.name(size=32) }}
+    </p>
+    <p>
+        {{ _('Correo Electrónico') }}<br>
+        {{ form.email(size=32) }}
+    </p>
+    <p>
+        {{ _('Mensaje') }}<br>
+        {{ form.message(rows=5, cols=40) }}
+    </p>
+    <p>{{ form.submit(value=_('Enviar')) }}</p>
+</form>
+{% endblock %}

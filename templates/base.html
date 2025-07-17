@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="{{ get_locale() }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+<header>
+    <nav>
+        <a href="{{ url_for('home') }}">
+            <img src="{{ url_for('static', filename='img/estiloycolor_logo.jpeg') }}" alt="Estilo y Color" height="100">
+        </a>
+        <ul>
+            <!-- links de navegación -->
+        </ul>
+    </nav>
+</header>
+
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Estilo & Color{% endblock %}</title>
+    <title>{% block title %}{{ _('Estilo & Color') }}{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/colors.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
@@ -10,11 +22,12 @@
     <header>
         <nav>
             <ul>
-                <li><a href="{{ url_for('home') }}">Inicio</a></li>
-                <li><a href="{{ url_for('about') }}">Sobre mí</a></li>
-                <li><a href="{{ url_for('services') }}">Servicios</a></li>
-                <li><a href="{{ url_for('portfolio') }}">Portafolio</a></li>
-                <li><a href="{{ url_for('contact') }}">Contacto</a></li>
+                <li><a href="{{ url_for('home', lang=get_locale()) }}">{{ _('Inicio') }}</a></li>
+                <li><a href="{{ url_for('about', lang=get_locale()) }}">{{ _('Sobre mí') }}</a></li>
+                <li><a href="{{ url_for('services', lang=get_locale()) }}">{{ _('Servicios') }}</a></li>
+                <li><a href="{{ url_for('portfolio', lang=get_locale()) }}">{{ _('Portafolio') }}</a></li>
+                <li><a href="{{ url_for('contact', lang=get_locale()) }}">{{ _('Contacto') }}</a></li>
+                <li><a href="?lang=es">ES</a> | <a href="?lang=en">EN</a></li>
             </ul>
         </nav>
     </header>
@@ -22,7 +35,7 @@
         {% block content %}{% endblock %}
     </main>
     <footer>
-        <p>&copy; 2025 Estilo & Color - Eli Llantén</p>
+        <p>&copy; 2025 {{ _('Estilo & Color - Eli Llantén. Todos los derechos reservados.') }}</p>
     </footer>
 </body>
 </html>

@@ -1,3 +1,10 @@
 {% extends 'base.html' %}
-{% block title %}Servicios{% endblock %}
-{% block content %}<h1>Servicios</h1>{% endblock %}
+{% block title %}{{ _('Servicios') }}{% endblock %}
+{% block content %}
+<h1>{{ _('Servicios') }}</h1>
+<ul>
+    <li>{{ _('Asesoría de imagen personalizada') }}</li>
+    <li>{{ _('Análisis de color') }}</li>
+    <li>{{ _('Talleres de estilo y autoestima') }}</li>
+</ul>
+{% endblock %}

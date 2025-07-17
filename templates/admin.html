@@ -1,3 +1,23 @@
 {% extends 'base.html' %}
-{% block title %}Admin{% endblock %}
-{% block content %}<h1>Panel de Administración</h1>{% endblock %}
+{% block title %}{{ _('Panel de Administración') }}{% endblock %}
+{% block content %}
+<h1>{{ _('Panel de Administración') }}</h1>
+<table border="1">
+    <thead>
+        <tr>
+            <th>{{ _('Nombre') }}</th>
+            <th>{{ _('Correo Electrónico') }}</th>
+            <th>{{ _('Mensaje') }}</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for contact in contacts %}
+        <tr>
+            <td>{{ contact.name }}</td>
+            <td>{{ contact.email }}</td>
+            <td>{{ contact.message }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
