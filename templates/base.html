@@ -2,47 +2,78 @@
 <html lang="{{ get_locale() }}">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ _('Asesoría de imagen y color personal para mujeres que desean proyectar su autenticidad.') }}">
+    <meta name="author" content="Eli Llantén">
+
     <title>{% block title %}{{ _('Estilo & Color') }}{% endblock %}</title>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/colors.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+    {% block head %}{% endblock %}
 </head>
+
 <body style="background-color: var(--background-color); color: var(--text-color);">
 
-    <!-- LOGO ENCIMA DEL HEADER -->
-    <div class="logo-top-container">
-        <a href="{{ url_for('home') }}">
-            <img src="{{ url_for('static', filename='img/estiloycolor_logo.jpeg') }}" alt="Estilo y Color" class="logo-top-img">
-        </a>
-    </div>
+  <!-- LOGO ENCIMA DEL HEADER -->
+  <div class="logo-top-container">
+    <a href="{{ url_for('home') }}">
+      <img src="{{ url_for('static', filename='img/estiloycolor_logo.jpeg') }}" alt="Estilo y Color" class="logo-top-img">
+    </a>
+  </div>
 
-    <!-- HEADER CON NAVEGACIÓN -->
-<header>
-  <nav class="main-nav">
-    <div class="nav-left">
-      <ul class="nav-links">
-        <li><a href="{{ url_for('home', lang=get_locale()) }}">{{ _('Inicio') }}</a></li>
-        <li><a href="{{ url_for('about', lang=get_locale()) }}">{{ _('Sobre mí') }}</a></li>
-        <li><a href="{{ url_for('services', lang=get_locale()) }}">{{ _('Servicios') }}</a></li>
-        <li><a href="{{ url_for('portfolio', lang=get_locale()) }}">{{ _('Portafolio') }}</a></li>
-        <li><a href="{{ url_for('contact', lang=get_locale()) }}">{{ _('Contacto') }}</a></li>
-      </ul>
-    </div>
-    <div class="nav-lang">
-      <a href="?lang=es" aria-label="Cambiar a español">🇪🇸 ES</a>
-      <span>|</span>
-      <a href="?lang=en" aria-label="Switch to English">🇺🇸 EN</a>
-    </div>
-  </nav>
-</header>
+  <!-- HEADER CON NAVEGACIÓN -->
+  <header>
+    <nav class="main-nav">
+      <div class="nav-left">
+        <ul class="nav-links">
+          <li><a href="{{ url_for('home', lang=get_locale()) }}">{{ _('Inicio') }}</a></li>
+          <li><a href="{{ url_for('about', lang=get_locale()) }}">{{ _('Sobre mí') }}</a></li>
+          <li><a href="{{ url_for('services', lang=get_locale()) }}">{{ _('Servicios') }}</a></li>
+          <li><a href="{{ url_for('portfolio', lang=get_locale()) }}">{{ _('Portafolio') }}</a></li>
+          <li><a href="{{ url_for('contact', lang=get_locale()) }}">{{ _('Contacto') }}</a></li>
+        </ul>
+      </div>
+      <div class="nav-lang">
+        <a href="?lang=es" aria-label="Cambiar a español">🇪🇸 ES</a>
+        <span>|</span>
+        <a href="?lang=en" aria-label="Switch to English">🇺🇸 EN</a>
+      </div>
+    </nav>
+  </header>
 
-    <main>
-        {% block content %}{% endblock %}
-    </main>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
 
   <footer class="footer">
-  <p class="footer-line">&copy; 2025 Estilo & Color by Eli Llantén.</p>
-  <p class="footer-line">{{ _('Todos los derechos reservados.') }}</p>
-</footer>
+    <p class="footer-line">&copy; 2025 Estilo & Color by Eli Llantén.</p>
+    <p class="footer-line">{{ _('Todos los derechos reservados.') }}</p>
+  </footer>
+
+  <!-- IntersectionObserver para animaciones al hacer scroll -->
+  <script defer>
+    document.addEventListener("DOMContentLoaded", function () {
+      const items = document.querySelectorAll(".fade-in-up");
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("appear");
+            entry.target.classList.remove("invisible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+
+      items.forEach(el => observer.observe(el));
+    });
+  </script>
+
+  {% block scripts %}{% endblock %}
+
 </body>
 </html>
-

@@ -51,7 +51,7 @@ footer {
     background-color: var(--secondary-color);
     color: var(--text-color);
     text-align: center;
-    padding: 0.1rem;
+    padding: 0.5rem;
     margin-top: 3rem;
     font-size: 0.95rem;
 }
@@ -148,7 +148,7 @@ h1, h2, h3 {
 .hero-overlay-gradient {
   width: 100%;
   height: 95%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -202,8 +202,8 @@ h1, h2, h3 {
 }
 
 /* Animación */
-.fade-in-up {
-  animation: fadeInUp 1s ease-out;
+.fade-in-up.appear {
+  animation: fadeInUp 0.8s ease-out forwards;
 }
 
 @keyframes fadeInUp {
@@ -235,4 +235,188 @@ h1, h2, h3 {
     margin: 0;
   line-height: 1.4;
   font-size: 0.9rem;
+}
+
+.about-section {
+  padding: 3rem 1.5rem;
+  background-color: #fff7f8; /* tono suave y femenino */
+}
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Lora', serif;
+    font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  text-align: left;
+}
+
+.about-container h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+    text-align: center;
+}
+
+.about-container .callout {
+  font-family: 'Open Sans', sans-serif;
+  font-style: italic;
+  color: #d243e8;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.carousel-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.carousel-slide {
+  display: flex;
+  width: 500%;
+  animation: slide 20s ease-in-out infinite;
+}
+
+.carousel-slide img {
+  width: 20%;
+  height: 500px; /* Ajusta esta altura a lo que necesites */
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+/* Animación automática */
+@keyframes slide {
+  0%     { transform: translateX(0%); }      /* Imagen 1 */
+  16%    { transform: translateX(0%); }
+
+  20%    { transform: translateX(-20%); }    /* Imagen 2 */
+  36%    { transform: translateX(-20%); }
+
+  40%    { transform: translateX(-40%); }    /* Imagen 3 */
+  56%    { transform: translateX(-40%); }
+
+  60%    { transform: translateX(-60%); }    /* Imagen 4 */
+  76%    { transform: translateX(-60%); }
+
+  80%    { transform: translateX(-80%); }    /* Imagen 5 */
+  100%   { transform: translateX(-80%); }
+}
+
+
+@media (max-width: 600px) {
+  .carousel-slide img {
+    height: 250px;
+  }
+}
+
+.certifications-section {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+}
+
+.certifications-section h2 {
+  font-family: 'Lora', serif;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent-color);
+  text-align: center;
+}
+
+.certification-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.cert-card {
+  background-color: #f9f5ff;
+  border-left: 4px solid #d243e8;
+  border-radius: 0.75rem;
+  padding: 1.25rem 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  gap: 0.75rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  align-items: flex-start;
+}
+
+.cert-icon svg {
+  width: 24px;
+  height: 24px;
+  color: #d243e8;
+  flex-shrink: 0;
+}
+
+.cert-text {
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  line-height: 1.4;
+}
+
+.cert-text strong {
+  font-size: 1.05rem;
+  display: block;
+}
+
+.cert-text span {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.cert-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.cert-icon svg {
+  width: 24px;
+  height: 24px;
+  color: #d243e8;
+  flex-shrink: 0;
+}
+
+.cert-card p {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+.certification-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.fade-in-up.appear {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.invisible {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

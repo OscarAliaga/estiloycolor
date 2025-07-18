@@ -1,6 +1,115 @@
 {% extends 'base.html' %}
 {% block title %}{{ _('Sobre mí') }}{% endblock %}
 {% block content %}
-<h1>{{ _('Sobre mí') }}</h1>
-<p>{{ _('Soy asesora de imagen apasionada por ayudar a las mujeres a proyectar su autenticidad a través de su estilo personal.') }}</p>
+
+<section class="about-section">
+  <div class="about-container fade-in-up">
+    <h1>{{ _('Hola, soy Eli Llantén') }}</h1>
+    <p class="callout">
+      &ldquo;{{ _('Creo profundamente que el estilo personal es una forma de bienestar y autoexpresión.') }}&rdquo;
+    </p>
+    <p>
+      {{ _('Soy asesora de imagen, pero también soy una compañera de viaje para mujeres que quieren conectar con su autenticidad, irradiar su belleza interior y reflejar quiénes son a través de su imagen.') }}
+    </p>
+    <p>
+      {{ _('Mi enfoque fusiona el estilo con el bienestar emocional y el desarrollo personal. No se trata solo de qué te queda bien, sino de cómo quieres sentirte, qué quieres proyectar, y cómo te ves a ti misma en cada etapa de tu vida.') }}
+    </p>
+    <p>
+      {{ _('A través del color, las prendas y el autoconocimiento, te acompaño a descubrir una imagen que te represente, te haga sentir cómoda y segura, y que te empodere en todas tus facetas.') }}
+    </p>
+  </div>
+</section>
+
+<div class="carousel-container fade-in-up">
+  <div class="carousel-slide">
+      <img src="{{ url_for('static', filename='img/yo5.jpg') }}" alt="{{ _('Eli') }}">
+    <img src="{{ url_for('static', filename='img/yo1.jpg') }}" alt="{{ _('Eli trabajando en su estudio') }}">
+    <img src="{{ url_for('static', filename='img/yo2.jpg') }}" alt="{{ _('Eli asesorando con paleta de colores') }}">
+    <img src="{{ url_for('static', filename='img/yo3.jpg') }}" alt="{{ _('Eli con cliente feliz') }}">
+      <img src="{{ url_for('static', filename='img/yo4.jpg') }}" alt="{{ _('Eli con cliente feliz 2') }}">
+  </div>
+</div>
+
+<section class="certifications-section">
+  <h2>{{ _('Formación y Certificaciones') }}</h2>
+  <div class="certification-cards">
+
+    <div class="cert-card fade-in-up invisible" style="animation-delay: 0.1s;">
+      <div class="cert-icon">
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M21 8L12 4 3 8l9 4 9-4zm-9 6.18L6.24 10.6 5 11.18v2.22l7 3.11 7-3.11v-2.22l-1.24-.58L12 14.18z"/>
+        </svg>
+      </div>
+      <div class="cert-text">
+        <strong>{{ _('Curso de Asesoría de Imagen') }}</strong><br>
+        <span>{{ _('Tu Imagen Personal (TIP)') }}</span>
+      </div>
+    </div>
+
+    <div class="cert-card fade-in-up invisible" style="animation-delay: 0.2s;">
+      <div class="cert-icon">
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.25 2 11c0 2.95 1.77 5.5 4.44 6.91.5.28.88.8.88 1.43 0 1.03.99 1.66 1.96 1.22 2.03-.92 3.64-2.23 4.8-3.87.95-1.36 1.71-3.24 2.15-5.45.25-1.28.19-2.55-.15-3.78C15.74 4.7 14.02 3.15 12 2z"/>
+        </svg>
+      </div>
+      <div class="cert-text">
+        <strong>{{ _('Curso de Colorimetría') }}</strong><br>
+        <span>{{ _('Escuela DM Image') }}</span>
+      </div>
+    </div>
+
+    <div class="cert-card fade-in-up invisible" style="animation-delay: 0.3s;">
+      <div class="cert-icon">
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+          <path d="M12 2v20M2 12h20" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </div>
+      <div class="cert-text">
+        <strong>{{ _('Curso de Colorimetría Avanzada') }}</strong><br>
+        <span>{{ _('Estudio Amare (LaColorimetrista)') }}</span>
+      </div>
+    </div>
+
+    <div class="cert-card fade-in-up invisible" style="animation-delay: 0.4s;">
+      <div class="cert-icon">
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+          <path d="M12 2v20M2 12h20" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </div>
+      <div class="cert-text">
+        <strong>{{ _('Curso de Colorimetría Avanzada') }}</strong><br>
+        <span>{{ _('Escuela DM Image') }}</span>
+      </div>
+    </div>
+
+    <div class="cert-card fade-in-up invisible" style="animation-delay: 0.5s;">
+      <div class="cert-icon">
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2a9 9 0 0 1 9 9c0 3.87-2.69 7.14-6.32 8.36L14 22H6v-2.55c0-.94.63-1.76 1.53-1.97 1.13-.27 1.82-1.25 1.82-2.42V14c0-.73-.39-1.4-1-1.78A7.94 7.94 0 0 1 4 11c0-4.97 4.03-9 9-9z"/>
+        </svg>
+      </div>
+      <div class="cert-text">
+        <strong>{{ _('Curso de Morfopsicología') }}</strong><br>
+        <span>{{ _('Escuela DM Image') }}</span>
+      </div>
+    </div>
+
+    <div class="cert-card fade-in-up invisible" style="animation-delay: 0.6s;">
+      <div class="cert-icon">
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2a7 7 0 0 1 7 7c0 3.87-3.13 7-7 7s-7-3.13-7-7a7 7 0 0 1 7-7zm0 16c4.42 0 8 3.58 8 8H4c0-4.42 3.58-8 8-8z"/>
+        </svg>
+      </div>
+      <div class="cert-text">
+        <strong>{{ _('Certificación Internacional como Asesora de Imagen y Personal Shopper') }}</strong><br>
+        <span>{{ _('Academia Project Glam') }}</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 {% endblock %}
+
