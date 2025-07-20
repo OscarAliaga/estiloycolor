@@ -10,66 +10,122 @@ body {
 }
 
 header {
-    background-color: var(--primary-color);
-    padding: 0.1rem 5rem;
-    border-bottom: 1px solid var(--accent-color);
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  position: relative; /* 🔧 NECESARIO */
+  background-color: var(--primary-color);
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1400px; /* mismo valor que max-width del contenido */
+  max-width: 95%;
+  height: 2px;
+  background-color: rgba(244, 143, 177, 0.5);
+  transition: opacity 0.3s ease;
+  opacity: 1;
+  pointer-events: none;
+}
+
+header.hide-line::after {
+  opacity: 0;
+}
+
+/* Contenedor del nav */
+.main-nav {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0.5rem 2rem; /* ajustado para no ser tan alto ni tan ancho */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Estilo de los enlaces de navegación */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li a {
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    text-decoration: none;
-    color: var(--accent-color);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--accent-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 0.2rem 0.5rem;         /* 🔥 le da cuerpo al botón */
+  border-radius: 999px;           /* 🔥 redondeado total (píldora) */
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+  background-color: #f48fb1;
+    color: var(--primary-color);
 }
 
+/* Estilo del selector de idioma */
+.nav-lang {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+
+.nav-lang a {
+  color: var(--text-color);
+  text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 0.2rem 0.5rem;         /* 🔥 le da cuerpo al botón */
+  border-radius: 999px;           /* 🔥 redondeado total (píldora) */
+}
+
+.nav-lang a:hover {
+  background-color: #f48fb1;
+    color: var(--primary-color);
+}
+
+
+.nav-lang span {
+  color: var(--accent-color);
+}
+
+/* Imagen del logo (si lo tienes) */
 nav img {
-    height: 50px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-    margin: 0;
-    padding: 0;
+  height: 70px;
 }
 
 main {
     padding: 2rem;
 }
 
-footer {
-    font-family: 'Lora', serif;
-    background-color: var(--secondary-color);
-    color: var(--text-color);
-    text-align: center;
-    padding: 0.5rem;
-    margin-top: 3rem;
-    font-size: 0.95rem;
+.footer {
+  font-family: 'Lora', serif;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 0.5rem;
+  margin-top: 1rem;
+  font-size: 0.95rem;
 }
 
-button, input[type="submit"] {
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    border: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    font-family: 'Open Sans', sans-serif;
+/* Alinea el contenido al ancho visual del resto del sitio */
+.footer-container {
+  max-width: 1400px;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
 }
 
-button:hover, input[type="submit"]:hover {
-    background-color: var(--primary-color);
-    color: var(--accent-color);
+.footer-line {
+  margin: 0.7rem 0;
 }
 
 form p {
@@ -83,7 +139,7 @@ form p {
 }
 
 .logo-top-img {
-    height: 240px;
+    height: 180px;
     max-width: 100%;
 }
 
@@ -134,33 +190,67 @@ h1, h2, h3 {
 }
 
 .hero-section {
-  background-image: url('/static/img/hero.jpeg');
-  background-size: cover;
-  background-position: center;
-  height: 90vh;
-  position: relative;
+  background-image: url('/static/img/heroii.jpeg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center; /* más equilibrado */
+  height: 80vh;
+    width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
   color: white;
+  padding: 0 1rem;
+  overflow: hidden;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10%; /* ajusta según qué tan largo quieres el gradiente */
+  background: linear-gradient(to top, rgba(0,0,0,0.2), transparent);
+  pointer-events: none; /* importante para que no bloquee clics en botones */
+  z-index: 1;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10%; /* ajusta según qué tan largo quieres el gradiente */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), transparent);
+  pointer-events: none; /* importante para que no bloquee clics en botones */
+  z-index: 1;
 }
 
 .hero-overlay-gradient {
-  width: 100%;
-  height: 95%;
-     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  width: 62.8%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.1));
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.25rem;
+    position: relative;
+  z-index: 2;
 }
 
 .hero-content {
-  text-align: center;
-  max-width: 700px;
+  max-width: 800px;
+  width: 100%;
   padding: 2rem;
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 1rem;
+  text-align: center;
+  animation: fadeInUp 2s ease-out;
+    margin-top: 25rem;
+    position: relative;
+  z-index: 2;
 }
 
 .hero-title {
@@ -188,7 +278,7 @@ h1, h2, h3 {
   background-color: #f48fb1;
   color: white;
   padding: 1rem 2rem;
-  border-radius: 0.5rem;
+  border-radius: 999px;
   text-decoration: none;
   font-weight: bold;
   transition: background-color 0.5s ease;
@@ -236,6 +326,8 @@ h1, h2, h3 {
   line-height: 1.4;
   font-size: 0.9rem;
 }
+
+/* bout section*/
 
 .about-section {
   padding: 3rem 1.5rem;
@@ -419,4 +511,113 @@ h1, h2, h3 {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Estilo de la Sección de Contacto */
+
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 1rem;
+  background-color: var(--background-color); /* usa un color suave o blanco */
+}
+
+.contact-container {
+  max-width: 600px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.85); /* contenedor blanco suave */
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+
+.contact-title {
+  text-align: center;
+  font-family: 'Lora', serif;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.contact-form label {
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 0.25rem;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.contact-input,
+.contact-textarea {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.75rem;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.contact-input:focus,
+.contact-textarea:focus {
+  border-color: #f48fb1;
+  outline: none;
+}
+
+.contact-button,
+button, input[type="submit"] {
+  background-color: #f48fb1;
+    color: var(--primary-color);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 999px;
+    font-weight: 600;
+  font-size: 1.2rem;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #d243e8;
+  transform: translateY(-2px);
+}
+
+.contact-button {
+  display: block;
+  margin: 2rem auto 0 auto; /* 🔥 margen arriba y centrado horizontal */
+}
+
+/* Iconos formulario de contacto*/
+
+.input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.icon-left {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.with-icon {
+  padding-left: 2.5rem;
+}
+
+.consent {
+  font-size: 0.85rem;
+  margin-top: 1rem;
+  color: var(--text-color);
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }

@@ -11,6 +11,7 @@ db.init_app(app)
 # Configuración de Flask-Babel
 app.config['BABEL_DEFAULT_LOCALE'] = 'es'
 app.config['BABEL_SUPPORTED_LOCALES'] = ['es', 'en']
+app.config['BABEL_TRANSLATION_DIRECTORIES'] = 'translations'
 
 # ✅ Versión moderna y correcta: usar locale_selector directamente
 def get_locale():

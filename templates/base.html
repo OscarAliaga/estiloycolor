@@ -10,6 +10,8 @@
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/colors.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome/css/all.min.css') }}">
+
 
     {% block head %}{% endblock %}
 </head>
@@ -19,7 +21,7 @@
   <!-- LOGO ENCIMA DEL HEADER -->
   <div class="logo-top-container">
     <a href="{{ url_for('home') }}">
-      <img src="{{ url_for('static', filename='img/estiloycolor_logo.jpeg') }}" alt="Estilo y Color" class="logo-top-img">
+      <img src="{{ url_for('static', filename='img/estiloycolor_logo2.png') }}" alt="Estilo y Color" class="logo-top-img">
     </a>
   </div>
 
@@ -48,9 +50,11 @@
   </main>
 
   <footer class="footer">
+  <div class="footer-container">
     <p class="footer-line">&copy; 2025 Estilo & Color by Eli Llantén.</p>
     <p class="footer-line">{{ _('Todos los derechos reservados.') }}</p>
-  </footer>
+  </div>
+</footer>
 
   <!-- IntersectionObserver para animaciones al hacer scroll -->
   <script defer>
@@ -74,6 +78,18 @@
   </script>
 
   {% block scripts %}{% endblock %}
+<script>
+  window.addEventListener('scroll', function () {
+    const header = document.querySelector('header');
+    const scrollY = window.scrollY || window.pageYOffset;
+
+    if (scrollY > 10) {
+      header.classList.add('hide-line');
+    } else {
+      header.classList.remove('hide-line');
+    }
+  });
+</script>
 
 </body>
 </html>

@@ -1,21 +1,71 @@
 {% extends 'base.html' %}
 {% block title %}{{ _('Contacto') }}{% endblock %}
+
 {% block content %}
-<h1>{{ _('Contacto') }}</h1>
-<form method="POST" action="{{ url_for('contact', lang=get_locale()) }}">
-    {{ form.hidden_tag() }}
-    <p>
-        {{ _('Nombre') }}<br>
-        {{ form.name(size=32) }}
-    </p>
-    <p>
-        {{ _('Correo Electrónico') }}<br>
-        {{ form.email(size=32) }}
-    </p>
-    <p>
-        {{ _('Mensaje') }}<br>
-        {{ form.message(rows=5, cols=40) }}
-    </p>
-    <p>{{ form.submit(value=_('Enviar')) }}</p>
-</form>
+<section class="contact-section">
+  <div class="contact-container">
+    <h1 class="contact-title">{{ _('Contacto') }}</h1>
+    <form method="POST" action="{{ url_for('contact', lang=get_locale()) }}" class="contact-form">
+      {{ form.hidden_tag() }}
+
+      <!-- Nombre -->
+      <label for="name">{{ _('Nombre') }}</label>
+      <div class="input-group">
+        <i class="fa fa-user icon-left"></i>
+        {{ form.name(size=32, class="contact-input with-icon") }}
+      </div>
+
+      <!-- Correo -->
+      <label for="email">{{ _('Correo Electrónico') }}</label>
+      <div class="input-group">
+        <i class="fa fa-envelope icon-left"></i>
+        {{ form.email(size=32, class="contact-input with-icon") }}
+      </div>
+
+      <!-- Teléfono -->
+      <label for="phone">{{ _('Teléfono') }}</label>
+      <div class="input-group">
+        <i class="fa fa-phone icon-left"></i>
+        <input type="tel" name="phone" class="contact-input with-icon">
+      </div>
+
+      <!-- Motivo de contacto -->
+      <label for="subject">{{ _('Motivo de contacto') }}</label>
+      <div class="input-group">
+        <i class="fa fa-clipboard icon-left"></i>
+        <select name="subject" class="contact-input with-icon">
+          <option>{{ _('Consulta general') }}</option>
+          <option>{{ _('Agendar asesoría') }}</option>
+          <option>{{ _('Colaboración o invitación') }}</option>
+          <option>{{ _('Otro') }}</option>
+        </select>
+      </div>
+
+      <!-- ¿Qué deseas lograr? -->
+      <label for="goal">{{ _('¿Qué deseas lograr con tu imagen?') }}</label>
+      <div class="input-group">
+        <i class="fa fa-star icon-left"></i>
+        <input type="text" name="goal" class="contact-input with-icon">
+      </div>
+
+      <!-- Mensaje -->
+      <label for="message">{{ _('Mensaje') }}</label>
+      <div class="input-group">
+        <i class="fa fa-pen icon-left"></i>
+        {{ form.message(rows=5, cols=40, class="contact-textarea with-icon") }}
+      </div>
+
+      <!-- Consentimiento -->
+      <label class="consent">
+        <input type="checkbox" name="consent" required>
+        {{ _('Acepto el uso de mis datos para ser contactada.') }}
+      </label>
+
+      {{ form.submit(value=_('Enviar'), class="contact-button") }}
+    </form>
+  </div>
+</section>
 {% endblock %}
+
+
+
