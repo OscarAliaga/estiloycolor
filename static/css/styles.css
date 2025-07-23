@@ -487,6 +487,7 @@ h1, h2, h3 {
 
   .carousel-item img {
     height: 100%;
+    box-sizing: border-box;
   }
 
 /* TEXTO INSPIRADOR */
@@ -588,11 +589,68 @@ h1, h2, h3 {
   100%   { transform: translateX(-80%); }
 }
 
+/* Config Portfolio Card-Carousel */
+
+.portfolio-card .carousel-wrapper {
+  width: 100%;
+  max-width: 600px;
+  margin: 1.5rem auto;
+  aspect-ratio: 16 / 14;
+  overflow: hidden;
+  position: relative;
+  border-radius: 1rem;
+  box-shadow: 0 10px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* TEXTO DEBAJO DEL CAROUSEL */
+
+.portfolio-card .carousel-text {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding: 0 1rem;
+  font-family: 'Georgia', serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-style: normal;
+  letter-spacing: 0.5px;
+  color: #5a4d42;
+  transition: opacity 0.6s ease-in-out;
+  min-height: 3em;
+  opacity: 1;
+  line-height: 1.6;
+}
+
+.portfolio-card .carousel-text.fade-out {
+  opacity: 0;
+}
 
 @media (max-width: 600px) {
   .carousel-slide img {
+    font-size: 1.4rem;
+    min-height: 2.5rem;
     height: 250px;
   }
+}
+
+.portfolio-card .ba-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.portfolio-card .reveal-slider {
+  width: 100%;
+  max-width: 600px; /* ❗️controla el ancho real */
+  aspect-ratio: 16 / 14;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  background-color: white;
+  box-shadow: 0 10px 16px rgba(0, 0, 0, 0.3);
+  margin: 0 auto;     /* 🔥 centra horizontalmente */
+  display: block;     /* 🔥 asegura que puede centrarse */
 }
 
 /* CERTIFICATION SECTION */
@@ -838,7 +896,7 @@ button:hover, input[type="submit"]:hover {
 /* Botón Whatsapp */
 .whatsapp-float {
   position: fixed;
-  bottom: 20px;
+  bottom: 90px;
   right: 20px;
   background-color: #f48fb1;
   color: white;
@@ -858,7 +916,7 @@ button:hover, input[type="submit"]:hover {
 /* Botón Contacto */
 .contact-float {
   position: fixed;
-  bottom: 90px; /* ← debajo del botón de WhatsApp */
+  bottom: 20px; /* ← debajo del botón de WhatsApp */
   right: 20px;
   background-color: #f48fb1;
   color: white;
@@ -878,15 +936,49 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Portfolio Section */
+/* Botón Instagram */
+.instagram-float {
+  position: fixed;
+  bottom: 163px; /* Ajusta según los otros botones */
+  right: 20px;
+  background-color: #f48fb1;
+  color: white;
+  font-size: 2rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
 
-.portfolio-cards {
+/* Hover con los colores reales del icono de Instagram */
+.instagram-float:hover {
+  background: radial-gradient(circle at 30% 107%,
+    #fdf497 0%, #fdf497 5%,
+    #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  color: white;
+}
+
+
+/* === CONTENEDOR GENERAL DE LA SECCIÓN PORTAFOLIO === */
+.portfolio-wrapper {
+  width: 90%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* === GRILLA DE TARJETAS === */
+.portfolio-cards,
+.portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
+  align-items: stretch;
 }
 
+/* === TARJETA INDIVIDUAL === */
 .portfolio-card {
   background-color: white;
   border-radius: 1rem;
@@ -895,12 +987,13 @@ html {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
   padding: 1.5rem;
-}
-
-.portfolio-card {
   position: relative;
   z-index: 1;
+  height: auto;
+  max-width: 100%;
 }
 
 .portfolio-card:hover {
@@ -908,58 +1001,111 @@ html {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* === DEGRADADOS DE FONDO (ARRIBA / ABAJO) === */
 .portfolio-card::before,
-.portfolio-card::after {
+.portfolio-card::after,
+.portfolio-hero-content::before,
+.portfolio-hero-content::after {
   content: "";
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: 140%;
-  height: 15%; /* puedes ajustar a 10% si es muy fuerte */
+  width: 120%;
+  height: 10%;
   pointer-events: none;
   z-index: 2;
   border-radius: inherit;
 }
 
-.portfolio-card::before {
+.portfolio-card::before,
+.portfolio-hero-content::before {
   top: 0;
   background: linear-gradient(to bottom, rgba(211, 67, 232, 0.1), transparent);
 }
 
-.portfolio-card::after {
+.portfolio-card::after,
+.portfolio-hero-content::after {
   bottom: 0;
   background: linear-gradient(to top, rgba(211, 67, 232, 0.1), transparent);
 }
 
-.portfolio-card-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
+/* === CONTENIDO TEXTO DE LA TARJETA === */
 .portfolio-card-text {
-  padding: 1.5rem;
+  padding: 1rem;
   text-align: left;
 }
 
 .portfolio-card-text h3 {
-  font-size: 1.25rem;
+  font-size: 1.4rem;
+  text-align: center;
   font-weight: 600;
   margin-bottom: 0.75rem;
   color: #333;
 }
 
 .portfolio-card-text p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #666;
   line-height: 1.5;
 }
 
-.cta-container {
-  text-align: center;
-  margin-top: 3rem;
+/* === IMÁGENES LADO A LADO (ANTES / DESPUÉS) === */
+.portfolio-card-images {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
+.before-image,
+.after-image {
+  flex: 1;
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  max-width: 100%;
+}
+
+.before-image img,
+.after-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* === LABEL SOBRE IMÁGENES === */
+.label,
+.ba-label {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  background-color: white;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.85rem;
+  border-radius: 0.3rem;
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.ba-label-after {
+  left: auto;
+  right: 10px;
+}
+
+.ba-label.active {
+  background-color: #d243e8;
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 0 6px rgba(210, 67, 232, 0.6);
+  transition: all 0.3s ease;
+}
+
+/* === CONTENEDOR HERO DE PORTFOLIO === */
 .portfolio-hero-content {
   max-width: 950px;
   width: 100%;
@@ -968,7 +1114,7 @@ html {
   border-radius: 1rem;
   text-align: center;
   animation: fadeInUp 2s ease-out;
-  margin: 2rem auto 2rem auto;
+  margin: 2rem auto;
   position: relative;
   z-index: 2;
   color: black;
@@ -986,189 +1132,47 @@ html {
   font-weight: 450;
 }
 
-.portfolio-hero-content::before,
-.portfolio-hero-content::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 140%;
-  height: 15%; /* Puedes ajustar al gusto */
-  pointer-events: none;
-  z-index: 2;
-  border-radius: inherit;
+/* === CTA FINAL === */
+.cta-container {
+  text-align: center;
+  margin-top: 3rem;
 }
 
-.portfolio-hero-content::before {
-  top: 0;
-  background: linear-gradient(to bottom, rgba(211, 67, 232, 0.1), transparent);
-}
-
-.portfolio-hero-content::after {
-  bottom: 0;
-  background: linear-gradient(to top, rgba(211, 67, 232, 0.1), transparent);
-}
-
-.portfolio-card-images {
+/* === SLIDER "REVEAL" (ANTES / DESPUÉS) === */
+/* Contenedor que centra y controla el ancho */
+.slider-wrapper {
   display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.before-image,
-.after-image {
-  flex: 1;
-  position: relative;
-  height: 800px; /* puedes ajustar esta altura */
-  overflow: hidden;
-  border-radius: 0.5rem;
-}
-
-.before-image img,
-.after-image img {
+  justify-content: center;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  margin-top: 1.5rem;
 }
 
-.label {
-  position: absolute;
-  bottom: 8px;
-  left: 8px;
-  background-color: rgba(0,0,0,0.7);
-  color: white;
-  padding: 0.3rem 0.6rem;
-  font-size: 0.85rem;
-  border-radius: 0.3rem;
-  text-transform: uppercase;
-}
-
-@media (max-width: 768px) {
-  .portfolio-card-images {
-    flex-direction: column;
-  }
-
-  .before-image,
-  .after-image {
-    height: 200px; /* ajusta si es necesario para móvil */
-  }
-}
-
-/* === SLIDER REVEAL TIPO "ANTES / DESPUÉS" === */
 .ba-container {
-  max-width: 800px;
-  margin: 2rem auto;
+  max-width: 700px;
+  width: 100%;
+  margin: 0rem auto 0 auto;
 }
 
 .reveal-slider {
   position: relative;
   width: 100%;
-  height: 400px;
+  aspect-ratio: 4 / 4;
+  max-height: 500px;
   overflow: hidden;
+  background-color: white;
   border-radius: 1rem;
-  margin: 0 auto;
-  background-color: #eee; /* fallback por si no carga la imagen */
 }
 
-/* Imagen base: DESPUÉS */
-.reveal-slider .slider-base {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  z-index: 1;
-}
-
-/* Imagen superpuesta: ANTES */
-.reveal-slider .ba-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 2;
-}
-
+.reveal-slider .slider-base,
 .reveal-slider .ba-overlay img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Barra vertical deslizante */
-.ba-handle {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 8px;
-  background-color: #fff;
-  border: 2px solid #d243e8;
-  border-radius: 6px;
-  z-index: 3;
-  cursor: ew-resize;
-  transition: background-color 0.3s;
-}
-
-/* Etiquetas "Antes" y "Después" */
-.ba-label {
-  position: absolute;
-  top: 10px;
-  left: 10px; /* por defecto para "Antes" */
-  font-size: 0.9rem;
-  font-weight: bold;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
-  padding: 4px 10px;
-  border-radius: 6px;
-  z-index: 10;
-  text-transform: uppercase;
-  font-family: 'Open Sans', sans-serif;
-  white-space: nowrap;
-}
-
-.ba-label-after {
-  left: auto;
-  right: 10px;
-}
-
-.ba-label.active {
-  background-color: #d243e8;
-  color: white;
-  transform: scale(1.1);
-  box-shadow: 0 0 6px rgba(210, 67, 232, 0.6);
-  transition: all 0.3s ease;
-}
-
-/* Contenedor general del slider */
-.reveal-slider {
-  position: relative;
-  width: 700px;
-  height: 700px;
-  margin: 0rem auto;
-  overflow: hidden;
-  background: white;
-  border-radius: 0rem;
-}
-
-/* Imagen base visible (ANTES) */
-.reveal-slider .slider-base {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: contain;
-  z-index: 1;
-  opacity: 1;
+  display: block;
 }
 
-/* Capa superpuesta (DESPUÉS) */
 .reveal-slider .ba-overlay {
   position: absolute;
   top: 0;
@@ -1179,42 +1183,29 @@ html {
   z-index: 2;
 }
 
-.reveal-slider .ba-overlay img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 1;
-  display: block;
-}
-
-/* Barra deslizante vertical */
 .ba-handle {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 50%;
   width: 16px;
-  background: #f48fb1;
-  border: 1px white;
+  background: lightpink;
+  border: 1px solid white;
   z-index: 3;
   cursor: ew-resize;
 }
 
-/* Tooltip inferior que aparece al pasar el mouse */
-/* Tooltip que aparece SOLO mientras el handle pulsa */
+/* === TOOLTIP === */
 .slider-tooltip {
   position: absolute;
-  bottom: 10px; /* más pegado al borde inferior */
-  left: 50%;
+  bottom: 10px;
+  left: 25%;
   transform: translateX(-50%);
   background-color: #d243e8;
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 1rem;
   font-size: 0.85rem;
-  font-family: 'Open Sans', sans-serif;
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 6;
@@ -1222,7 +1213,7 @@ html {
   white-space: nowrap;
 }
 
-/* Muestra el tooltip si el handle está pulsando */
+/* Tooltip visible cuando el handle tiene clase "pulsing" */
 .reveal-slider .ba-handle.pulsing + .slider-tooltip {
   opacity: 1;
   animation: pulse-handle 1.5s infinite ease-in-out;
@@ -1230,18 +1221,9 @@ html {
 }
 
 @keyframes pulse-handle {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(210, 67, 232, 0.4);
-  }
-  70% {
-    transform: scale(1.1);
-    box-shadow: 0 0 0 10px rgba(210, 67, 232, 0);
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(210, 67, 232, 0);
-  }
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(210, 67, 232, 0.4); }
+  70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(210, 67, 232, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(210, 67, 232, 0); }
 }
 
 .ba-handle.pulsing {
@@ -1255,7 +1237,7 @@ html {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 8rem;
-  color:  #f48fb1;
+  color: lightpink;
   font-weight: bold;
   pointer-events: none;
   opacity: 1;
@@ -1263,41 +1245,50 @@ html {
   z-index: 5;
 }
 
-.ba-handle::after {
-  content: "";
-  opacity: 0;
-}
-
-.reveal-slider .ba-handle.pulsing + .slider-tooltip {
-  opacity: 1;
-  animation: pulse-handle 1.5s infinite ease-in-out;
-  transform-origin: center;
-}
-
+/* Animación inicial */
 @keyframes slideToLeft {
-  0% {
-    width: 50%;
-    left: 50%;
-  }
-  100% {
-    width: 0%;
-    left: 0%;
-  }
+  0% { width: 50%; left: 50%; }
+  100% { width: 0%; left: 0%; }
 }
 
-.reveal-slider.animate-init .ba-overlay {
-  animation: slideToLeft 2.2s ease-in-out forwards;
-}
-
+.reveal-slider.animate-init .ba-overlay,
 .reveal-slider.animate-init .ba-handle {
   animation: slideToLeft 2.2s ease-in-out forwards;
 }
 
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-  align-items: start;
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .portfolio-card-images {
+    flex-direction: column;
+  }
+
+  .before-image,
+  .after-image,
+  .reveal-slider {
+     background-color: white;
+    aspect-ratio: 1 / 1;
+  }
+
+  .portfolio-hero-title {
+    font-size: 2rem;
+  }
+
+  .portfolio-hero-subtitle {
+    font-size: 1.2rem;
+  }
 }
+@media (max-width: 600px) {
+  .portfolio-card .reveal-slider {
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .slider-wrapper .reveal-slider {
+    aspect-ratio: 1 / 1;
+  }
+}
+
 

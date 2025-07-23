@@ -11,13 +11,14 @@
   </div>
 
 <div class="section-content">
-  <div class="portfolio-grid">
+  <div class="portfolio-wrapper">
+    <div class="portfolio-grid">
 
     <!-- === Portfolio Card con slider === -->
     <div class="portfolio-card">
       <div class="portfolio-card-text">
-        <h3>{{ _('María: Conectar su imagen con su nueva etapa profesional') }}</h3>
-        <p>{{ _('Trabajamos juntas en definir su estilo elegante-natural, reflejando confianza, armonía y autenticidad en su nueva vida laboral.') }}</p>
+        <h3>{{ _('Alison: asesoría integral de imagen para descubrir su estilo natural que le permite diferenciarse.') }}</h3>
+        <p>{{ _('Trabajamos juntas en definir su estilo natural para expresar confianza, armonía y autenticidad.') }}</p>
       </div>
 
       <div class="ba-container">
@@ -30,7 +31,7 @@
 
           <!-- Imagen superpuesta: DESPUÉS -->
           <div class="ba-overlay">
-            <img src="{{ url_for('static', filename='img/p1_despues.png') }}" class="slider-overlay" alt="{{ _('Después') }}">
+            <img src="{{ url_for('static', filename='img/p1_despues.png') }}" alt="{{ _('Después') }}">
           </div>
 
           <div class="ba-handle"></div>
@@ -39,20 +40,48 @@
       </div>
     </div>
 
-    <!-- === Portfolio Card normal === -->
-    <div class="portfolio-card">
-      <div class="portfolio-card-image">
-        <img src="{{ url_for('static', filename='images/caso2.jpg') }}" alt="{{ _('Renovación de estilo: Carla') }}">
-      </div>
-      <div class="portfolio-card-text">
-        <h3>{{ _('Carla: Sentirse segura en su cuerpo y en su ropa') }}</h3>
-        <p>{{ _('Redescubrió su feminidad a través del estilo romántico y colores suaves que realzan su esencia.') }}</p>
-      </div>
+  <!-- === Portfolio Card Carousel === -->
+<div class="portfolio-card">
+  <div class="portfolio-card-text">
+    <h3>{{ _('Trinidad: colorimetría y visajismo para conocer los colores que resaltan su belleza natural') }}</h3>
+    <p>{{ _('Descubrió que los colores del espectro verano frío realzan su belleza.') }}</p>
+  </div>
+
+  <!-- Carousel específico para esta tarjeta -->
+  <div class="carousel-wrapper fade-in-up" id="carouselTrinidad">
+    <div class="pause-indicator" id="pauseTrinidad">⏸ {{ _('Pausado') }}</div>
+
+    <!-- Flechas -->
+    <button class="carousel-nav left" id="prevTrinidad">❮</button>
+    <button class="carousel-nav right" id="nextTrinidad">❯</button>
+
+    <!-- Imágenes -->
+    <div class="carousel-slide" id="slideTrinidad">
+      <div class="carousel-item"><img src="{{ url_for('static', filename='img/trini1.jpg') }}" alt="Trinidad 1"></div>
+      <div class="carousel-item"><img src="{{ url_for('static', filename='img/trini2.jpg') }}" alt="Trinidad 2"></div>
+      <div class="carousel-item"><img src="{{ url_for('static', filename='img/trini3.jpg') }}" alt="Trinidad 3"></div>
+      <div class="carousel-item"><img src="{{ url_for('static', filename='img/trini4.jpg') }}" alt="Trinidad 4"></div>
+      <div class="carousel-item"><img src="{{ url_for('static', filename='img/trinidad5.jpg') }}" alt="Trinidad 5"></div>
     </div>
+  </div>
+
+  <!-- Texto sincronizado -->
+  <div class="carousel-text" id="textTrinidad"></div>
+</div>
 
   </div> <!-- cierre .portfolio-grid -->
 </div> <!-- cierre .section-content -->
 
+    <!-- Textos de cada slide carousel -->
+<script id="textosTrinidad" type="application/json">
+[
+  "{{ _('Primer diagnóstico de colorimetría') }}",
+  "{{ _('Análisis de visagismo: forma del rostro y armonía') }}",
+  "{{ _('Selección de paleta de colores personalizada') }}",
+  "{{ _('Prueba de colores cerca del rostro') }}",
+  "{{ _('Resultados: paleta verano frío y estilo romántico') }}"
+]
+</script>
 
     <!-- === Call to action === -->
     <div class="cta-container">
@@ -115,7 +144,7 @@ setTimeout(() => {
     const updateSlider = (x) => {
       const rect = slider.getBoundingClientRect();
       let offset = x - rect.left;
-const min = 10; // mínimo 10px desde el borde izquierdo
+const min =0; // mínimo 10px desde el borde izquierdo
 const max = rect.width - 10; // máximo 10px antes del borde derecho
 offset = Math.max(min, Math.min(offset, max));
 
@@ -202,4 +231,73 @@ window.addEventListener("touchmove", stopPulse);
   });
 });
 </script>
+
+    <script>
+  function iniciarCarouselPersonalizado(wrapperId, slideId, textId, prevId, nextId, pauseId, jsonId) {
+    const textos = JSON.parse(document.getElementById(jsonId).textContent.trim());
+    const slide = document.getElementById(slideId);
+    const textEl = document.getElementById(textId);
+    const wrapper = document.getElementById(wrapperId);
+    const pauseIndicator = document.getElementById(pauseId);
+    let currentIndex = 0;
+    let intervalId = null;
+    const totalSlides = textos.length;
+
+    function updateCarousel() {
+      slide.style.transform = `translateX(${-100 * currentIndex}%)`;
+      textEl.classList.add('fade-out');
+      setTimeout(() => {
+        textEl.textContent = `“${textos[currentIndex]}”`;
+        textEl.classList.remove('fade-out');
+      }, 400);
+    }
+
+    function startCarousel() {
+      stopCarousel();
+      intervalId = setInterval(() => {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateCarousel();
+      }, 4000);
+    }
+
+    function stopCarousel() {
+      if (intervalId) {
+        clearInterval(intervalId);
+        intervalId = null;
+      }
+    }
+
+    document.getElementById(prevId).addEventListener('click', () => {
+      stopCarousel();
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    });
+
+    document.getElementById(nextId).addEventListener('click', () => {
+      stopCarousel();
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateCarousel();
+    });
+
+    wrapper.addEventListener('mouseenter', () => {
+      stopCarousel();
+      pauseIndicator.style.opacity = '1';
+    });
+
+    wrapper.addEventListener('mouseleave', () => {
+      startCarousel();
+      pauseIndicator.style.opacity = '0';
+    });
+
+    updateCarousel();
+    startCarousel();
+  }
+
+  // Inicializa el carousel de Trinidad
+  iniciarCarouselPersonalizado(
+    'carouselTrinidad', 'slideTrinidad', 'textTrinidad',
+    'prevTrinidad', 'nextTrinidad', 'pauseTrinidad', 'textosTrinidad'
+  );
+</script>
+
 {% endblock %}
