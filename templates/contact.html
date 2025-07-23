@@ -2,7 +2,7 @@
 {% block title %}{{ _('Contacto') }}{% endblock %}
 
 {% block content %}
-<section class="contact-section">
+<section id="contacto" class="contact-section">
   <div class="contact-container">
     <h1 class="contact-title">{{ _('Contacto') }}</h1>
     <form method="POST" action="{{ url_for('contact', lang=get_locale()) }}" class="contact-form">
@@ -39,13 +39,6 @@
           <option>{{ _('Colaboración o invitación') }}</option>
           <option>{{ _('Otro') }}</option>
         </select>
-      </div>
-
-      <!-- ¿Qué deseas lograr? -->
-      <label for="goal">{{ _('¿Qué deseas lograr con tu imagen?') }}</label>
-      <div class="input-group">
-        <i class="fa fa-star icon-left"></i>
-        <input type="text" name="goal" class="contact-input with-icon">
       </div>
 
       <!-- Mensaje -->

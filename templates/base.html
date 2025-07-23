@@ -16,6 +16,16 @@
     {% block head %}{% endblock %}
 </head>
 
+<a href="https://wa.me/56954108183" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<a href="{{ url_for('contact', lang=get_locale()) }}#contacto" class="contact-float" aria-label="{{ _('Formulario de contacto') }}">
+  <i class="fas fa-envelope"></i>
+</a>
+
+
+
 <body style="background-color: var(--background-color); color: var(--text-color);">
 
   <!-- LOGO ENCIMA DEL HEADER -->
@@ -30,24 +40,64 @@
     <nav class="main-nav">
       <div class="nav-left">
         <ul class="nav-links">
-          <li><a href="{{ url_for('home', lang=get_locale()) }}">{{ _('Inicio') }}</a></li>
-          <li><a href="{{ url_for('about', lang=get_locale()) }}">{{ _('Sobre mí') }}</a></li>
-          <li><a href="{{ url_for('services', lang=get_locale()) }}">{{ _('Servicios') }}</a></li>
-          <li><a href="{{ url_for('portfolio', lang=get_locale()) }}">{{ _('Portafolio') }}</a></li>
-          <li><a href="{{ url_for('contact', lang=get_locale()) }}">{{ _('Contacto') }}</a></li>
+          <li>
+  <a href="{{ url_for('home', lang=get_locale()) }}"
+     class="{% if request.endpoint == 'home' %}active-page{% endif %}">
+    {{ _('Inicio') }}
+  </a>
+</li>
+
+<li>
+  <a href="{{ url_for('about', lang=get_locale()) }}"
+     class="{% if request.endpoint == 'about' %}active-page{% endif %}">
+    {{ _('Sobre mí') }}
+  </a>
+</li>
+
+<li>
+  <a href="{{ url_for('services', lang=get_locale()) }}"
+     class="{% if request.endpoint == 'services' %}active-page{% endif %}">
+    {{ _('Servicios') }}
+  </a>
+</li>
+
+<li>
+  <a href="{{ url_for('portfolio', lang=get_locale()) }}"
+     class="{% if request.endpoint == 'portfolio' %}active-page{% endif %}">
+    {{ _('Portafolio') }}
+  </a>
+</li>
+
+<li>
+  <a href="{{ url_for('contact', lang=get_locale()) }}"
+     class="{% if request.endpoint == 'contact' %}active-page{% endif %}">
+    {{ _('Contacto') }}
+  </a>
+</li>
         </ul>
       </div>
       <div class="nav-lang">
-        <a href="?lang=es" aria-label="Cambiar a español">🇪🇸 ES</a>
-        <span>|</span>
-        <a href="?lang=en" aria-label="Switch to English">🇺🇸 EN</a>
-      </div>
+  <i class="fas fa-globe"></i>
+  <a href="?lang=es" class="{% if get_locale() == 'es' %}active-lang{% endif %}" aria-label="Cambiar a español">🇪🇸 ES</a>
+  <span>|</span>
+  <a href="?lang=en" class="{% if get_locale() == 'en' %}active-lang{% endif %}" aria-label="Switch to English">🇺🇸 EN</a>
+</div>
+
     </nav>
   </header>
 
   <main>
     {% block content %}{% endblock %}
   </main>
+
+  <footer class="site-footer">
+  <div class="social-links">
+    <a href="https://www.instagram.com/estiloycolor_elillanten?igsh=cmp2cDN1YTFxNnhw&utm_source=qr" target="_blank" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
+</footer>
+
 
   <footer class="footer">
   <div class="footer-container">
@@ -79,17 +129,29 @@
 
   {% block scripts %}{% endblock %}
 <script>
-  window.addEventListener('scroll', function () {
-    const header = document.querySelector('header');
-    const scrollY = window.scrollY || window.pageYOffset;
+  const header = document.querySelector('header');
+  const footer = document.querySelector('.footer');
 
-    if (scrollY > 10) {
-      header.classList.add('hide-line');
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY) {
+      // 🠟 Scroll hacia abajo
+      header.classList.add('hide-line');   // oculta línea del header
+      footer.classList.remove('hide-line'); // muestra línea del footer
     } else {
-      header.classList.remove('hide-line');
+      // 🠝 Scroll hacia arriba
+      header.classList.remove('hide-line'); // muestra línea del header
+      footer.classList.add('hide-line');   // oculta línea del footer
     }
+
+    lastScrollY = currentScrollY;
   });
 </script>
+
+
 
 </body>
 </html>

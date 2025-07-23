@@ -66,8 +66,15 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  background-color: #f48fb1;
+  background-color: #d243e8;
     color: var(--primary-color);
+}
+
+nav ul li a.active-page {
+  background-color: #f48fb1;
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 0 4px rgba(0,0,0,0.1);
 }
 
 /* Estilo del selector de idioma */
@@ -81,24 +88,32 @@ nav ul li a:hover {
 }
 
 .nav-lang a {
-  color: var(--text-color);
   text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  padding: 0.2rem 0.5rem;         /* 🔥 le da cuerpo al botón */
-  border-radius: 999px;           /* 🔥 redondeado total (píldora) */
+  color: var(--accent-color);
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .nav-lang a:hover {
-  background-color: #f48fb1;
-    color: var(--primary-color);
+  background-color: #d243e8;
+  color: var(--primary-color);
 }
 
-
-.nav-lang span {
+.nav-lang i {
+  margin-right: 0.5rem;
   color: var(--accent-color);
 }
 
-/* Imagen del logo (si lo tienes) */
+.nav-lang .active-lang {
+  background-color: #f48fb1;
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+}
+
+/* Imagen del logo */
 nav img {
   height: 70px;
 }
@@ -108,16 +123,37 @@ main {
 }
 
 .footer {
+  position: relative;
   font-family: 'Lora', serif;
   background-color: var(--primary-color);
   color: var(--text-color);
   padding: 0.5rem;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   font-size: 0.95rem;
 }
 
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1400px; /* mismo valor que max-width del contenido */
+  max-width: 100%;
+  height: 2px;
+  background-color: rgba(244, 143, 177, 0.5);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  opacity: 1;
+  z-index: 1;
+}
+
+.footer.hide-line::before {
+  opacity: 0;
+}
 /* Alinea el contenido al ancho visual del resto del sitio */
 .footer-container {
+  position: relative;
   max-width: 1400px;
   width: 90%;
   margin: 0 auto;
@@ -127,6 +163,24 @@ main {
 .footer-line {
   margin: 0.7rem 0;
 }
+
+.site-footer {
+  text-align: center;
+  padding: 2rem 0;
+  background-color: white;
+}
+
+.social-links a {
+  color: #000;
+  font-size: 2.5rem;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #e1306c; /* color Instagram */
+}
+
 
 form p {
     margin-bottom: 1rem;
@@ -190,7 +244,7 @@ h1, h2, h3 {
 }
 
 .hero-section {
-  background-image: url('/static/img/heroii.jpeg');
+  background-image: url('/static/img/heroiii.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center; /* más equilibrado */
@@ -209,8 +263,9 @@ h1, h2, h3 {
   content: "";
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: 100%;
+ left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
   height: 10%; /* ajusta según qué tan largo quieres el gradiente */
   background: linear-gradient(to top, rgba(0,0,0,0.2), transparent);
   pointer-events: none; /* importante para que no bloquee clics en botones */
@@ -221,8 +276,9 @@ h1, h2, h3 {
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
   height: 10%; /* ajusta según qué tan largo quieres el gradiente */
   background: linear-gradient(to bottom, rgba(0,0,0,0.2), transparent);
   pointer-events: none; /* importante para que no bloquee clics en botones */
@@ -232,7 +288,7 @@ h1, h2, h3 {
 .hero-overlay-gradient {
   width: 62.8%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.1));
+  background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.1));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -241,7 +297,7 @@ h1, h2, h3 {
 }
 
 .hero-content {
-  max-width: 800px;
+  max-width: 950px;
   width: 100%;
   padding: 2rem;
   background-color: rgba(0, 0, 0, 0.4);
@@ -284,7 +340,7 @@ h1, h2, h3 {
   transition: background-color 0.5s ease;
   display: inline-flex;
   align-items: center;
-  gap: 0rem;
+  gap: 0.5rem;
 }
 
 .hero-button:hover {
@@ -327,15 +383,40 @@ h1, h2, h3 {
   font-size: 0.9rem;
 }
 
-/* bout section*/
+/* ABOUT SECTION */
 
 .about-section {
+  position: relative;
   padding: 3rem 1.5rem;
-  background-color: #fff7f8; /* tono suave y femenino */
+  display: flex;
+  justify-content: center;
+}
+.about-section::before,
+.about-section::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 10%; /* Puedes ajustar al gusto */
+  pointer-events: none;
+  z-index: 2;
+  border-radius: inherit;
+}
+
+.about-section::before {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(211, 67, 232, 0.1), transparent);
+}
+
+.about-section::after {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(211, 67, 232, 0.1), transparent);
 }
 
 .about-container {
   max-width: 800px;
+  width: 100%;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.9);
   padding: 2.5rem;
@@ -346,6 +427,7 @@ h1, h2, h3 {
   line-height: 1.6;
   color: var(--text-color);
   text-align: left;
+  z-index: 1;
 }
 
 .about-container h1 {
@@ -364,26 +446,129 @@ h1, h2, h3 {
     text-align: center;
 }
 
-.carousel-container {
-  max-width: 500px;
+/* CARROUSEL CONFIG */
+
+.carousel-wrapper {
+  max-width: 600px;
   margin: 2rem auto;
+  aspect-ratio: 16 / 14; /* ✅ Nuevo: relación proporcional */
   overflow: hidden;
+  position: relative;
   border-radius: 1rem;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 16px rgba(0, 0, 0, 0.3);
 }
 
 .carousel-slide {
   display: flex;
-  width: 500%;
-  animation: slide 20s ease-in-out infinite;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease-in-out;
 }
 
-.carousel-slide img {
-  width: 20%;
-  height: 500px; /* Ajusta esta altura a lo que necesites */
+.carousel-item {
+  flex: 0 0 100%;
+  max-width: 100%;
+  height: 100%; /* Coincide con la altura del carrusel */
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 0.5rem;
+  display: block;
 }
+
+@media (max-width: 600px) {
+  .carousel-wrapper {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+  .carousel-item img {
+    height: 100%;
+  }
+
+/* TEXTO INSPIRADOR */
+
+.carousel-text {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding: 0 1rem;
+  font-family: 'Georgia', serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-style: normal;
+  letter-spacing: 0.5px;
+  color: #5a4d42;
+  transition: opacity 0.6s ease-in-out;
+  min-height: 3em;
+  opacity: 1;
+  line-height: 1.6;
+}
+
+.carousel-text.fade-out {
+  opacity: 0;
+}
+
+/* INDICADOR DE PAUSA */
+
+.pause-indicator {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background-color: rgba(0, 0, 0, 0.65);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.carousel-wrapper:hover .pause-indicator {
+  opacity: 1;
+}
+
+/* BOTONES DE NAVEGACIÓN */
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0.8rem 1rem;
+  border-radius: 50%;
+  cursor: default;
+  z-index: 20;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.carousel-nav:active,
+.carousel-nav:focus,
+.carousel-nav:hover {
+  transform: translateY(-50%) !important; /* evita bajada */
+}
+
+.carousel-wrapper:hover .carousel-nav {
+  opacity: 1;
+}
+
+.carousel-nav.left {
+  left: 10px;
+}
+
+.carousel-nav.right {
+  right: 10px;
+}
+
 
 /* Animación automática */
 @keyframes slide {
@@ -409,6 +594,8 @@ h1, h2, h3 {
     height: 250px;
   }
 }
+
+/* CERTIFICATION SECTION */
 
 .certifications-section {
   max-width: 900px;
@@ -444,12 +631,13 @@ h1, h2, h3 {
   align-items: flex-start;
 }
 
-.cert-icon svg {
-  width: 24px;
-  height: 24px;
+.cert-icon i {
+  font-size: 1.6rem;
   color: #d243e8;
   flex-shrink: 0;
+  margin-top: 0.2rem;
 }
+
 
 .cert-text {
   font-family: 'Open Sans', sans-serif;
@@ -516,21 +704,46 @@ h1, h2, h3 {
 /* Estilo de la Sección de Contacto */
 
 .contact-section {
+  position: relative;
+  padding: 3rem 1.5rem;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 4rem 1rem;
-  background-color: var(--background-color); /* usa un color suave o blanco */
+  background-color: white; /* fondo base */
+  overflow: hidden;
 }
 
 .contact-container {
+  position: relative;
   max-width: 600px;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.85); /* contenedor blanco suave */
   padding: 2rem;
   border-radius: 1rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
+  z-index: 1;
+}
+
+.contact-section::before,
+.contact-section::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 10%;
+  pointer-events: none;
+  z-index: 0; /* 🔥 detrás del contenido */
+}
+
+.contact-section::before {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(211, 67, 232, 0.1), transparent);
+}
+
+.contact-section::after {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(211, 67, 232, 0.1), transparent);
 }
 
 .contact-title {
@@ -621,3 +834,470 @@ button:hover, input[type="submit"]:hover {
   gap: 0.5rem;
   align-items: center;
 }
+
+/* Botón Whatsapp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #f48fb1;
+  color: white;
+  font-size: 2rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  background-color: #1ebc5a;
+}
+
+/* Botón Contacto */
+.contact-float {
+  position: fixed;
+  bottom: 90px; /* ← debajo del botón de WhatsApp */
+  right: 20px;
+  background-color: #f48fb1;
+  color: white;
+  font-size: 2rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.contact-float:hover {
+  background-color: #357ABD;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* Portfolio Section */
+
+.portfolio-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.portfolio-card {
+  background-color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+.portfolio-card {
+  position: relative;
+  z-index: 1;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-card::before,
+.portfolio-card::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140%;
+  height: 15%; /* puedes ajustar a 10% si es muy fuerte */
+  pointer-events: none;
+  z-index: 2;
+  border-radius: inherit;
+}
+
+.portfolio-card::before {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(211, 67, 232, 0.1), transparent);
+}
+
+.portfolio-card::after {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(211, 67, 232, 0.1), transparent);
+}
+
+.portfolio-card-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.portfolio-card-text {
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.portfolio-card-text h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+.portfolio-card-text p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.cta-container {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.portfolio-hero-content {
+  max-width: 950px;
+  width: 100%;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 1rem;
+  text-align: center;
+  animation: fadeInUp 2s ease-out;
+  margin: 2rem auto 2rem auto;
+  position: relative;
+  z-index: 2;
+  color: black;
+}
+
+.portfolio-hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.portfolio-hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: 450;
+}
+
+.portfolio-hero-content::before,
+.portfolio-hero-content::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140%;
+  height: 15%; /* Puedes ajustar al gusto */
+  pointer-events: none;
+  z-index: 2;
+  border-radius: inherit;
+}
+
+.portfolio-hero-content::before {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(211, 67, 232, 0.1), transparent);
+}
+
+.portfolio-hero-content::after {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(211, 67, 232, 0.1), transparent);
+}
+
+.portfolio-card-images {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.before-image,
+.after-image {
+  flex: 1;
+  position: relative;
+  height: 800px; /* puedes ajustar esta altura */
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.before-image img,
+.after-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.label {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background-color: rgba(0,0,0,0.7);
+  color: white;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.85rem;
+  border-radius: 0.3rem;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .portfolio-card-images {
+    flex-direction: column;
+  }
+
+  .before-image,
+  .after-image {
+    height: 200px; /* ajusta si es necesario para móvil */
+  }
+}
+
+/* === SLIDER REVEAL TIPO "ANTES / DESPUÉS" === */
+.ba-container {
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.reveal-slider {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 1rem;
+  margin: 0 auto;
+  background-color: #eee; /* fallback por si no carga la imagen */
+}
+
+/* Imagen base: DESPUÉS */
+.reveal-slider .slider-base {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 1;
+}
+
+/* Imagen superpuesta: ANTES */
+.reveal-slider .ba-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.reveal-slider .ba-overlay img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Barra vertical deslizante */
+.ba-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  background-color: #fff;
+  border: 2px solid #d243e8;
+  border-radius: 6px;
+  z-index: 3;
+  cursor: ew-resize;
+  transition: background-color 0.3s;
+}
+
+/* Etiquetas "Antes" y "Después" */
+.ba-label {
+  position: absolute;
+  top: 10px;
+  left: 10px; /* por defecto para "Antes" */
+  font-size: 0.9rem;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 6px;
+  z-index: 10;
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  white-space: nowrap;
+}
+
+.ba-label-after {
+  left: auto;
+  right: 10px;
+}
+
+.ba-label.active {
+  background-color: #d243e8;
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 0 6px rgba(210, 67, 232, 0.6);
+  transition: all 0.3s ease;
+}
+
+/* Contenedor general del slider */
+.reveal-slider {
+  position: relative;
+  width: 700px;
+  height: 700px;
+  margin: 0rem auto;
+  overflow: hidden;
+  background: white;
+  border-radius: 0rem;
+}
+
+/* Imagen base visible (ANTES) */
+.reveal-slider .slider-base {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
+  opacity: 1;
+}
+
+/* Capa superpuesta (DESPUÉS) */
+.reveal-slider .ba-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.reveal-slider .ba-overlay img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+  display: block;
+}
+
+/* Barra deslizante vertical */
+.ba-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 16px;
+  background: #f48fb1;
+  border: 1px white;
+  z-index: 3;
+  cursor: ew-resize;
+}
+
+/* Tooltip inferior que aparece al pasar el mouse */
+/* Tooltip que aparece SOLO mientras el handle pulsa */
+.slider-tooltip {
+  position: absolute;
+  bottom: 10px; /* más pegado al borde inferior */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #d243e8;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  font-size: 0.85rem;
+  font-family: 'Open Sans', sans-serif;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 6;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* Muestra el tooltip si el handle está pulsando */
+.reveal-slider .ba-handle.pulsing + .slider-tooltip {
+  opacity: 1;
+  animation: pulse-handle 1.5s infinite ease-in-out;
+  transform-origin: center;
+}
+
+@keyframes pulse-handle {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(210, 67, 232, 0.4);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 10px rgba(210, 67, 232, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(210, 67, 232, 0);
+  }
+}
+
+.ba-handle.pulsing {
+  animation: pulse-handle 1.5s infinite ease-in-out;
+}
+
+.ba-handle.pulsing::after {
+  content: "↔";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 8rem;
+  color:  #f48fb1;
+  font-weight: bold;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  z-index: 5;
+}
+
+.ba-handle::after {
+  content: "";
+  opacity: 0;
+}
+
+.reveal-slider .ba-handle.pulsing + .slider-tooltip {
+  opacity: 1;
+  animation: pulse-handle 1.5s infinite ease-in-out;
+  transform-origin: center;
+}
+
+@keyframes slideToLeft {
+  0% {
+    width: 50%;
+    left: 50%;
+  }
+  100% {
+    width: 0%;
+    left: 0%;
+  }
+}
+
+.reveal-slider.animate-init .ba-overlay {
+  animation: slideToLeft 2.2s ease-in-out forwards;
+}
+
+.reveal-slider.animate-init .ba-handle {
+  animation: slideToLeft 2.2s ease-in-out forwards;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  align-items: start;
+}
+

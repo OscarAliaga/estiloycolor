@@ -1,24 +1,205 @@
-<section id="portafolio" class="portfolio-section">
 {% extends 'base.html' %}
 {% block title %}{{ _('Portafolio') }}{% endblock %}
 
 {% block content %}
 <section id="portafolio" class="portfolio-section">
-  <div class="section-content">
-    <h2>{{ _('Portafolio') }}</h2>
-    <p>{{ _('Conoce algunos de los proyectos y transformaciones que he acompañado.') }}</p>
+  <div class="portfolio-hero-content">
+    <h2 class="portfolio-hero-title">{{ _('Portafolio') }}</h2>
+    <p class="portfolio-hero-subtitle">
+      {{ _('Descubre historias reales de transformación y conexión con la imagen personal.') }}
+    </p>
+  </div>
 
-    <!-- Aquí podrías insertar un carrusel, galería o tarjetas de casos -->
-    <!-- Ejemplo: -->
-    <!--
-    <div class="portfolio-gallery">
-      <img src="{{ url_for('static', filename='images/caso1.jpg') }}" alt="Caso 1">
-      <img src="{{ url_for('static', filename='images/caso2.jpg') }}" alt="Caso 2">
+<div class="section-content">
+  <div class="portfolio-grid">
+
+    <!-- === Portfolio Card con slider === -->
+    <div class="portfolio-card">
+      <div class="portfolio-card-text">
+        <h3>{{ _('María: Conectar su imagen con su nueva etapa profesional') }}</h3>
+        <p>{{ _('Trabajamos juntas en definir su estilo elegante-natural, reflejando confianza, armonía y autenticidad en su nueva vida laboral.') }}</p>
+      </div>
+
+      <div class="ba-container">
+        <div class="reveal-slider">
+          <span class="ba-label ba-label-before">{{ _('Antes') }}</span>
+          <span class="ba-label ba-label-after">{{ _('Después') }}</span>
+
+          <!-- Imagen base: ANTES -->
+          <img src="{{ url_for('static', filename='img/p1_antes.png') }}" class="slider-base" alt="{{ _('Antes') }}">
+
+          <!-- Imagen superpuesta: DESPUÉS -->
+          <div class="ba-overlay">
+            <img src="{{ url_for('static', filename='img/p1_despues.png') }}" class="slider-overlay" alt="{{ _('Después') }}">
+          </div>
+
+          <div class="ba-handle"></div>
+          <div class="slider-tooltip">🡆 {{ _('Mueve la barra para ver el resultado') }}</div>
+        </div>
+      </div>
     </div>
-    -->
 
-    <a href="{{ url_for('contact') }}" class="hero-button">{{ _('Agenda tu asesoría') }}</a>
+    <!-- === Portfolio Card normal === -->
+    <div class="portfolio-card">
+      <div class="portfolio-card-image">
+        <img src="{{ url_for('static', filename='images/caso2.jpg') }}" alt="{{ _('Renovación de estilo: Carla') }}">
+      </div>
+      <div class="portfolio-card-text">
+        <h3>{{ _('Carla: Sentirse segura en su cuerpo y en su ropa') }}</h3>
+        <p>{{ _('Redescubrió su feminidad a través del estilo romántico y colores suaves que realzan su esencia.') }}</p>
+      </div>
+    </div>
+
+  </div> <!-- cierre .portfolio-grid -->
+</div> <!-- cierre .section-content -->
+
+
+    <!-- === Call to action === -->
+    <div class="cta-container">
+      <a href="{{ url_for('contact', lang=get_locale()) }}" class="hero-button">
+        {{ _('Agenda tu asesoría personalizada') }}
+      </a>
+    </div>
   </div>
 </section>
-{% endblock %}
 
+<!-- ✅ JavaScript Reveal Slider -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const sliders = document.querySelectorAll(".reveal-slider");
+
+  sliders.forEach(slider => {
+    const overlay = slider.querySelector(".ba-overlay");
+    const handle = slider.querySelector(".ba-handle");
+
+    if (!overlay || !handle) return;
+
+    let isDragging = false;
+
+    setTimeout(() => {
+  let percent = 50;
+  let direction = 1;
+  const overlay = slider.querySelector(".ba-overlay");
+  const handle = slider.querySelector(".ba-handle");
+  handle.classList.add("pulsing");
+
+
+  const anim = setInterval(() => {
+    percent += direction * 2;
+    if (percent >= 70) direction = -1;
+    if (percent <= 0) {
+      clearInterval(anim);
+      percent = 0; // Finaliza mostrando solo "Antes"
+    }
+
+    overlay.style.width = `${percent}%`;
+    handle.style.left = `${percent}%`;
+    updateActiveLabel(percent);
+  }, 20);
+}, 600);
+
+  // Agrega clase para activar animación CSS
+slider.classList.add("animate-init");
+
+// Desactiva la clase luego de que termine la animación (para evitar conflictos)
+setTimeout(() => {
+  slider.classList.remove("animate-init");
+
+  // Asegura estado final (por si el navegador no aplicó 100% del keyframe)
+  overlay.style.width = "0%";
+  handle.style.left = "0%";
+  updateActiveLabel(0);
+}, 2900); // un poco más que la duración de la animación
+
+
+    const updateSlider = (x) => {
+      const rect = slider.getBoundingClientRect();
+      let offset = x - rect.left;
+const min = 10; // mínimo 10px desde el borde izquierdo
+const max = rect.width - 10; // máximo 10px antes del borde derecho
+offset = Math.max(min, Math.min(offset, max));
+
+      const percent = (offset / rect.width) * 100;
+      overlay.style.width = `${percent}%`;
+      handle.style.left = `${percent}%`;
+      updateActiveLabel(percent);
+    };
+
+    // ✅ Agrega referencia a los labels
+const labelBefore = slider.querySelector(".ba-label-before");
+const labelAfter = slider.querySelector(".ba-label-after");
+
+// ✅ Función para resaltar el label activo según posición
+function updateActiveLabel(percent) {
+  if (percent < 20) {
+    labelBefore.classList.add("active");
+    labelAfter.classList.remove("active");
+  } else if (percent > 80) {
+    labelAfter.classList.add("active");
+    labelBefore.classList.remove("active");
+  } else {
+    labelBefore.classList.remove("active");
+    labelAfter.classList.remove("active");
+  }
+}
+
+    const startDrag = () => isDragging = true;
+    const stopDrag = () => isDragging = false;
+
+    handle.addEventListener("mousedown", startDrag);
+    handle.addEventListener("touchstart", startDrag);
+
+    window.addEventListener("mouseup", stopDrag);
+    window.addEventListener("touchend", stopDrag);
+
+    window.addEventListener("mousemove", e => {
+      if (isDragging) updateSlider(e.pageX);
+    });
+
+    window.addEventListener("touchmove", e => {
+      if (isDragging) updateSlider(e.touches[0].pageX);
+    });
+
+    // Posición inicial
+    overlay.style.width = "50%";
+    handle.style.left = "50%";
+    // Animación inicial automática
+setTimeout(() => {
+  let percent = 50;
+  let direction = 1;
+
+  const anim = setInterval(() => {
+    percent += direction * 1;
+
+    if (percent >= 70) direction = -1;
+
+    if (percent <= 0) {
+      clearInterval(anim);
+
+      // ✅ Forzar la posición final al 0%
+      overlay.style.width = "0%";
+      handle.style.left = "0%";
+      updateActiveLabel(0);
+      return;
+    }
+
+    overlay.style.width = `${percent}%`;
+    handle.style.left = `${percent}%`;
+    updateActiveLabel(percent);
+  }, 25);
+}, 600); // Espera inicial antes de empezar la animación
+
+      const stopPulse = () => {
+  handle.classList.remove("pulsing");
+  window.removeEventListener("mousemove", stopPulse);
+  window.removeEventListener("touchmove", stopPulse);
+};
+
+window.addEventListener("mousemove", stopPulse);
+window.addEventListener("touchmove", stopPulse);
+
+
+  });
+});
+</script>
+{% endblock %}
