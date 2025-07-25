@@ -7,15 +7,18 @@
     <div class="hero-content fade-in-up">
       <h1 class="hero-title">{{ _('Descubre tu mejor versión a través del estilo y color que más te representa') }}</h1>
       <p class="hero-subtitle">{{ _('Asesoría profesional en imagen, colorimatría y estilo personal') }}</p>
-      <div class="hero-buttons">
-        <a href="{{ url_for('services') }}" class="hero-button">
-          <i class="fas fa-eye"></i> {{ _('Ver servicios') }}
-        </a>
-        <a href="{{ url_for('portfolio') }}" class="hero-button">
-          <i class="fas fa-palette"></i> {{ _('Ver portafolio') }}
-        </a>
-      </div>
     </div>
   </div>
 </section>
+
+<!-- 🔥 Botones ahora están fuera de la sección hero -->
+<div class="hero-buttons">
+  <a href="{{ url_for('services') }}" class="hero-button">
+    <i class="fas fa-eye"></i> {{ _('Ver servicios') }}
+  </a>
+  <a href="{{ url_for('portfolio') }}" class="hero-button">
+    <i class="fas fa-palette"></i> {{ _('Ver portafolio') }}
+  </a>
+</div>
 {% endblock %}
+

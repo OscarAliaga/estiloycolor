@@ -36,7 +36,7 @@
   <!-- LOGO ENCIMA DEL HEADER -->
   <div class="logo-top-container">
     <a href="{{ url_for('home') }}">
-      <img src="{{ url_for('static', filename='img/estiloycolor_logo2.png') }}" alt="Estilo y Color" class="logo-top-img">
+      <img src="{{ url_for('static', filename='img/logo_acuarelas-2.png') }}" alt="Estilo y Color" class="logo-top-img">
     </a>
   </div>
 
@@ -147,7 +147,15 @@
   });
 </script>
 
-
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class="flash-messages">
+      {% for message in messages %}
+        <p>{{ message }}</p>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
 
 </body>
 </html>
