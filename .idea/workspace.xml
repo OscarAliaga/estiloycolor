@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1924fea6-b47c-4610-ac9b-e49255c23965" name="Changes" comment="Revisiones de seguridad y en pantallas pequeñas pre salida en vivo" />
+    <list default="true" id="1924fea6-b47c-4610-ac9b-e49255c23965" name="Changes" comment="Revisiones de seguridad y en pantallas pequeñas pre salida en vivo">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -116,7 +119,7 @@
       <workItem from="1752804989612" duration="7965000" />
       <workItem from="1752983748841" duration="16785000" />
       <workItem from="1753214396621" duration="73096000" />
-      <workItem from="1753466049035" duration="31297000" />
+      <workItem from="1753466049035" duration="33286000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;Estructura base proyecto página web Color y Estilo&quot;">
       <option name="closed" value="true" />
@@ -206,7 +209,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753505532443</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Revisiones de seguridad y en pantallas pequeñas pre salida en vivo">
+      <option name="closed" value="true" />
+      <created>1753506075653</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1753506075653</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
