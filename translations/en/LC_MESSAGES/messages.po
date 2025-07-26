@@ -1,0 +1,463 @@
+
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-07-22 17:03-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: app.py:61
+msgid "Mensaje enviado con éxito"
+msgstr "Message sent successfully"
+
+#: forms.py:9 templates/admin.html:8 templates/contact.html:12
+msgid "Nombre"
+msgstr "Name"
+
+#: forms.py:9 forms.py:10 forms.py:11
+msgid "Este campo es obligatorio."
+msgstr "This field is required"
+
+#: templates/about.html:2 templates/base.html:34
+msgid "Sobre mí"
+msgstr "About Me"
+
+#: templates/about.html:9
+msgid "Hola, soy Eli Llantén"
+msgstr "Hi, I'm Eli Llantén"
+
+#: templates/about.html:11
+msgid ""
+"Creo profundamente que el estilo personal es una forma de bienestar y "
+"autoexpresión."
+msgstr ""
+"I deeply believe that personal style is a form of wellness and self-"
+"expression."
+
+#: templates/about.html:14
+msgid ""
+"Soy asesora de imagen, pero también soy una compañera de viaje para "
+"mujeres que quieren conectar con su autenticidad, irradiar su belleza "
+"interior y reflejar quiénes son a través de su imagen."
+msgstr ""
+"I’m an image consultant, but also a companion for women who want to "
+"connect with their authenticity, radiate their inner beauty, and reflect "
+"who they are through their personal image."
+
+#: templates/about.html:17
+msgid ""
+"Mi enfoque fusiona el estilo con el bienestar emocional y el desarrollo "
+"personal. No se trata solo de qué te queda bien, sino de cómo quieres "
+"sentirte, qué quieres proyectar, y cómo te ves a ti misma en cada etapa "
+"de tu vida."
+msgstr ""
+"My approach blends style with emotional well-being and personal "
+"development. It's not just about what looks good on you, but about how "
+"you want to feel, what you want to express, and how you see yourself in "
+"each stage of life."
+
+#: templates/about.html:20
+msgid ""
+"A través del color, las prendas y el autoconocimiento, te acompaño a "
+"descubrir una imagen que te represente, te haga sentir cómoda y segura, y"
+" que te empodere en todas tus facetas."
+msgstr ""
+"Through color, clothing, and self-awareness, I guide you to discover an "
+"image that represents you, makes you feel confident and comfortable, and "
+"empowers you in all aspects of your life."
+
+#: templates/about.html:27
+msgid "Eli"
+msgstr ""
+
+#: templates/about.html:28
+msgid "Eli trabajando en su estudio"
+msgstr ""
+
+#: templates/about.html:29
+msgid "Eli asesorando con paleta de colores"
+msgstr ""
+
+#: templates/about.html:30
+msgid "Eli con cliente feliz"
+msgstr ""
+
+#: templates/about.html:31
+msgid "Eli con cliente feliz 2"
+msgstr ""
+
+#: templates/about.html:36
+msgid "Formación y Certificaciones"
+msgstr "Training and Certifications"
+
+#: templates/about.html:44
+msgid "Curso de Asesoría de Imagen"
+msgstr "Image Consulting Course"
+
+#: templates/about.html:45
+msgid "Tu Imagen Personal (TIP)"
+msgstr "Your Personal Image (YPI)"
+
+#: templates/about.html:54
+msgid "Curso de Colorimetría"
+msgstr "Colorimetry Course"
+
+#: templates/about.html:55 templates/about.html:75 templates/about.html:85
+msgid "Escuela DM Image"
+msgstr "DM Image School"
+
+#: templates/about.html:64 templates/about.html:74
+msgid "Curso de Colorimetría Avanzada"
+msgstr "Advanced Colorimetry Course"
+
+#: templates/about.html:65
+msgid "Estudio Amare (LaColorimetrista)"
+msgstr "Amare Study (LaColorimetrista)"
+
+#: templates/about.html:84
+msgid "Curso de Morfopsicología"
+msgstr "Morphopsychology Course"
+
+#: templates/about.html:94
+msgid "Certificación Internacional como Asesora de Imagen y Personal Shopper"
+msgstr "International Certification as Image Consultant and Personal Shopper"
+
+
+#: templates/about.html:95
+msgid "Academia Project Glam"
+msgstr "Project Glam Academy"
+
+#: templates/admin.html:2 templates/admin.html:4
+msgid "Panel de Administración"
+msgstr "Admin Panel"
+
+# Etiquetas adicionales útiles
+#: templates/admin.html:9 templates/contact.html:19
+msgid "Correo Electrónico"
+msgstr "Email"
+
+#: templates/admin.html:10 templates/contact.html:52
+msgid "Mensaje"
+msgstr "Message"
+
+#: templates/base.html:6
+msgid ""
+"Asesoría de imagen y color personal para mujeres que desean proyectar su "
+"autenticidad."
+msgstr ""
+"I'm an image consultant passionate about helping women express their "
+"authenticity through personal style."
+
+#: templates/base.html:9
+msgid "Estilo & Color"
+msgstr "Welcome to Estilo & Color"
+
+#: templates/base.html:33 templates/index.html:2
+msgid "Inicio"
+msgstr "Home"
+
+#: templates/base.html:35 templates/services.html:2 templates/services.html:7
+msgid "Servicios"
+msgstr "Services"
+
+#: templates/base.html:36 templates/portfolio.html:3 templates/portfolio.html:8
+msgid "Portafolio"
+msgstr "Portfolio"
+
+#: templates/base.html:37 templates/contact.html:2 templates/contact.html:7
+msgid "Contacto"
+msgstr "Contact"
+
+#: templates/base.html:55
+msgid "Todos los derechos reservados."
+msgstr "Estilo & Color - Eli Llantén. All rights reserved."
+
+# Campo: Teléfono
+#: templates/contact.html:26
+msgid "Teléfono"
+msgstr "Phone"
+
+# Campo: Motivo de contacto
+#: templates/contact.html:33
+msgid "Motivo de contacto"
+msgstr "Reason for contact"
+
+# Opciones del motivo
+#: templates/contact.html:37
+msgid "Consulta general"
+msgstr "General inquiry"
+
+#: templates/contact.html:38
+msgid "Agendar asesoría"
+msgstr "Book your consultation"
+
+#: templates/contact.html:39
+msgid "Colaboración o invitación"
+msgstr "Collaboration or invitation"
+
+#: templates/contact.html:40
+msgid "Otro"
+msgstr "Other"
+
+# Campo personalizado
+#: templates/contact.html:45
+msgid "¿Qué deseas lograr con tu imagen?"
+msgstr "What would you like to achieve with your image?"
+
+# Consentimiento legal
+#: templates/contact.html:61
+msgid "Acepto el uso de mis datos para ser contactada."
+msgstr "I accept the use of my data to be contacted."
+
+#: templates/contact.html:64
+msgid "Enviar"
+msgstr "Send"
+
+#: templates/index.html:8
+msgid "Descubre tu mejor versión a través del estilo y color que más te representa"
+msgstr "Discover your best self through the style and colors that represent you most"
+
+#: templates/index.html:9
+msgid "Asesoría profesional en imagen, colorimatría y estilo personal"
+msgstr "Professional consulting in image, color analysis, and personal style"
+
+#: templates/index.html:12
+msgid "Ver servicios"
+msgstr "See services"
+
+#: templates/index.html:15
+msgid "Ver portafolio"
+msgstr "See portfolio"
+
+#: templates/portfolio.html:9
+msgid "Conoce algunos de los proyectos y transformaciones que he acompañado."
+msgstr "Explore some of the projects and transformations I’ve supported."
+
+#: templates/portfolio.html:20 templates/services.html:13
+msgid "Agenda tu asesoría"
+msgstr "Book your consultation"
+
+#: templates/services.html:9
+msgid "Asesoría de imagen personalizada"
+msgstr "Personalized image consulting"
+
+#: templates/services.html:10
+msgid "Análisis de color"
+msgstr "Color analysis"
+
+#: templates/services.html:11
+msgid "Talleres de estilo y autoestima"
+msgstr "Style and self-esteem workshops"
+
+msgid "Pausado"
+msgstr "Paused"
+
+msgid "Descubre tu luz interior y hazla brillar con estilo propio"
+msgstr "Discover your inner light and let it shine with your own style"
+
+msgid "Cada color que usas habla de ti, hagamos que cuente una linda historia"
+msgstr "Every color you wear speaks about you, let's make it tell a beautiful story"
+
+msgid "Tu imagen también es tu voz, hagamos que se escuche fuerte y clara"
+msgstr "Your image is also your voice, let's make it heard loud and clear"
+
+msgid "Asesoría que conecta tu belleza interna con tu reflejo externo"
+msgstr "Styling that connects your inner beauty with your outer reflection"
+
+msgid "Empodérate desde tu estilo personal y auténtico, sin disfraces"
+msgstr "Empower yourself through your personal and authentic style, no disguises"
+
+
+#~ msgid "Descubre tu imagen auténtica a través"
+#~ msgstr "Discover your authentic image through "
+
+#~ msgid " del estilo, el color y el bienestar emocional."
+#~ msgstr "style, color, and emotional well-being."
+
+msgid "Descubre historias reales de transformación y conexión con la imagen personal."
+msgstr "Discover real stories of transformation and connection with personal image."
+
+msgid "Alison: asesoría integral de imagen para descubrir su estilo natural que le permite diferenciarse."
+msgstr "Alison: comprehensive image consulting to discover her natural style and stand out."
+
+msgid "Trabajamos juntas en definir su estilo natural para expresar confianza, armonía y autenticidad."
+msgstr "We worked together to define her natural style to express confidence, harmony, and authenticity."
+
+msgid "Mueve la barra para ver el resultado"
+msgstr "Slide the bar to see the result"
+
+msgid "Trinidad: colorimetría y visajismo para conocer los colores que resaltan su belleza natural"
+msgstr "Trinidad: color analysis and visagism to discover the colors that enhance her natural beauty"
+
+msgid "Descubrió que los colores del espectro verano frío realzan su belleza."
+msgstr "She discovered that cool summer spectrum colors enhance her beauty."
+
+msgid "Primer diagnóstico de colorimetría"
+msgstr "Initial color analysis"
+
+msgid "Análisis de visagismo: forma del rostro y armonía"
+msgstr "Visagism analysis: face shape and harmony"
+
+msgid "Selección de paleta de colores personalizada"
+msgstr "Selection of a personalized color palette"
+
+msgid "Prueba de colores cerca del rostro"
+msgstr "Color testing near the face"
+
+msgid "Resultados: paleta verano frío y estilo romántico"
+msgstr "Results: cool summer palette and romantic style"
+
+msgid "Agenda tu asesoría personalizada"
+msgstr "Book your personalized consultation"
+
+msgid "Trinidad: colorimetría y visajismo resaltando la belleza natural del rostro, considerando el color y estructura facial"
+msgstr "Trinidad: colorimetry and visagism highlighting the natural beauty of the face, considering color and facial structure"
+
+msgid "Descubrió temperatura, contraste, estación y sub-estación \"verano frío\"."
+msgstr "She discovered her temperature, contrast, season and sub-season: \"cool summer\"."
+
+msgid "Mensaje enviado con éxito"
+msgstr "Message sent successfully"
+
+msgid "Ingrese un correo válido."
+msgstr "Enter a valid email address."
+
+msgid "Servicios"
+msgstr "Services"
+
+msgid "Conecta con tu esencia a través de un enfoque integral que une estilo personal, colorimetría y autoconocimiento."
+msgstr "Connect with your essence through a holistic approach that unites personal style, color analysis, and self-awareness."
+
+msgid "Colorimetría"
+msgstr "Color Analysis"
+
+msgid "Descubre los colores que iluminan tu esencia."
+msgstr "Discover the colors that illuminate your essence."
+
+msgid "Ver más"
+msgstr "See more"
+
+msgid "¿Qué incluye?"
+msgstr "What's included?"
+
+msgid "Mediante el drapeado de telas, analizaremos los tonos naturales de tu piel, ojos y cabello para descubrir tu temperatura, sub-tonos y nivel de contraste."
+msgstr "Through fabric draping, we’ll analyze your natural skin, eye, and hair tones to discover your temperature, undertones, and contrast level."
+
+msgid "Identificaremos la paleta de colores que mejor te armoniza y aprenderás qué tonos de tintura capilar, maquillaje y metales en tus joyas armonizan contigo y realzan tu belleza natural."
+msgstr "We will identify the color palette that best suits you, and you will learn which hair dye tones, makeup, and jewelry metals harmonize with you and enhance your natural beauty."
+
+msgid "También te enseñaré a combinar colores con el círculo cromático de forma simple y práctica."
+msgstr "You will also learn to combine colors using the color wheel in a simple and practical way."
+
+msgid "Duración estimada:"
+msgstr "Estimated duration:"
+
+msgid "75 - 120 minutos"
+msgstr "75–120 minutes"
+
+msgid "Sesiones:"
+msgstr "Sessions:"
+
+msgid "1 sesión individual"
+msgstr "1 individual session"
+
+msgid "Modalidad:"
+msgstr "Mode:"
+
+msgid "Presencial u online"
+msgstr "In-person or online"
+
+msgid "Estilo"
+msgstr "Style"
+
+msgid "Descubre una imagen que refleje tu autenticidad."
+msgstr "Discover a look that reflects your authenticity."
+
+msgid "Identificarás tu estilo personal a partir de tus gustos, tu personalidad y tu forma de vida."
+msgstr "You will identify your personal style based on your preferences, personality, and lifestyle."
+
+msgid "También aprenderás a proyectar una imagen auténtica y coherente con quién eres, alineada con lo que deseas lograr."
+msgstr "You will also learn to project an authentic and coherent image that aligns with who you are and what you want to achieve."
+
+msgid "90 minutos"
+msgstr "90 minutes"
+
+msgid "Morfología"
+msgstr "Body Shape"
+
+msgid "Viste en armonía con las formas de tu cuerpo y resalta tu belleza natural."
+msgstr "Dress in harmony with your body shape and highlight your natural beauty."
+
+msgid "El análisis de morfología corporal se realiza a través de la observación guiada y el trabajo de conexión con tu autoimagen."
+msgstr "Body shape analysis is done through guided observation and connection with your self-image."
+
+msgid "Esto permite identificar la forma de tu cuerpo y cómo potenciarlo con prendas, cortes, escotes y tejidos que favorezcan tu silueta."
+msgstr "This helps you identify your body shape and how to enhance it with clothing, cuts, necklines, and fabrics that flatter your silhouette."
+
+msgid "75 minutos"
+msgstr "75 minutes"
+
+msgid "Visagismo"
+msgstr "Facial Analysis"
+
+msgid "Descubre lo que tu rostro dice de ti y cómo potenciarlo con estilo, resaltando tus rasgos con equilibrio y propósito."
+msgstr "Discover what your face communicates and how to enhance it with style, highlighting your features with balance and intention."
+
+msgid "Aprenderás a descubrir lo que tu rostro comunica a través de sus líneas naturales y cómo resaltar su belleza."
+msgstr "You will learn to understand what your face communicates through its natural lines and how to enhance its beauty."
+
+msgid "Además, conocerás los accesorios y cortes de cabello que mejor armonizan contigo y potencian tu estilo."
+msgstr "You will also discover which accessories and hairstyles best harmonize with you and elevate your style."
+
+msgid "60–75 minutos"
+msgstr "60–75 minutes"
+
+msgid "Personal Shopper"
+msgstr "Personal Shopper"
+
+msgid "Viste con propósito, claridad y confianza."
+msgstr "Dress with purpose, clarity, and confidence."
+
+msgid "Acompañamiento personalizado durante la experiencia de compra en tiendas físicas u online."
+msgstr "Personalized guidance during shopping experiences in physical or online stores."
+
+msgid "Asesoría en selección de prendas, accesorios y calzado según objetivos, presupuesto y estilo personal."
+msgstr "Advice on selecting clothing, accessories, and footwear based on your goals, budget, and personal style."
+
+msgid "180 minutos"
+msgstr "180 minutes"
+
+msgid "1 sesión individual o dúo"
+msgstr "1 individual or duo session"
+
+msgid "Asesoría Integral de Imagen"
+msgstr "Comprehensive Image Consulting"
+
+msgid "Una transformación completa y personalizada que te sube de nivel."
+msgstr "A complete and personalized transformation that elevates your image."
+
+msgid "Programa integral que combina diagnóstico de colorimetría, definición de estilo, análisis morfológico y visagismo."
+msgstr "Comprehensive program combining color analysis, style definition, body shape analysis, and facial analysis."
+
+msgid "Incluye orientación personalizada en vestuario, maquillaje y accesorios."
+msgstr "Includes personalized guidance on wardrobe, makeup, and accessories."
+
+msgid "3 a 4 sesiones de entre 60–90 minutos cada una"
+msgstr "3 to 4 sessions, each lasting 60–90 minutes"
+
+msgid "Paquete de sesiones individuales que incluyen: colorimetría, visagismo, morfología y estilo personal"
+msgstr "Package of individual sessions including: color analysis, facial analysis, body shape analysis, and personal style"
+
+msgid "Agenda tu asesoría"
+msgstr "Book your session"
+
+msgid "Ver menos"
+msgstr "See less"

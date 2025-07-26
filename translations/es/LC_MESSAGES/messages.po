@@ -1,0 +1,492 @@
+
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-07-20 04:00-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: app.py:52
+msgid "Mensaje enviado con éxito"
+msgstr "Mensaje enviado con éxito"
+
+#: forms.py:9 templates/admin.html:8 templates/contact.html:12
+msgid "Nombre"
+msgstr "Nombre"
+
+#: forms.py:9 forms.py:10 forms.py:11
+msgid "Este campo es obligatorio."
+msgstr "Este campo es obligatorio"
+
+#: templates/about.html:2 templates/base.html:34
+msgid "Sobre mí"
+msgstr "Sobre mí"
+
+#: templates/about.html:7
+msgid "Hola, soy Eli Llantén"
+msgstr "Hola, soy Eli Llantén"
+
+#: templates/about.html:9
+msgid ""
+"Creo profundamente que el estilo personal es una forma de bienestar y "
+"autoexpresión."
+msgstr ""
+"Creo profundamente que el estilo personal es una forma de bienestar y "
+"autoexpresión."
+
+#: templates/about.html:12
+msgid ""
+"Soy asesora de imagen, pero también soy una compañera de viaje para "
+"mujeres que quieren conectar con su autenticidad, irradiar su belleza "
+"interior y reflejar quiénes son a través de su imagen."
+msgstr ""
+"Soy asesora de imagen, pero también soy una compañera de viaje para "
+"mujeres que quieren conectar con su autenticidad, irradiar su belleza "
+"interior y reflejar quiénes son a través de su imagen."
+
+#: templates/about.html:15
+msgid ""
+"Mi enfoque fusiona el estilo con el bienestar emocional y el desarrollo "
+"personal. No se trata solo de qué te queda bien, sino de cómo quieres "
+"sentirte, qué quieres proyectar, y cómo te ves a ti misma en cada etapa "
+"de tu vida."
+msgstr ""
+"Mi enfoque fusiona el estilo con el bienestar emocional y el desarrollo "
+"personal. No se trata solo de qué te queda bien, sino de cómo quieres "
+"sentirte, qué quieres proyectar, y cómo te ves a ti misma en cada etapa "
+"de tu vida."
+
+#: templates/about.html:18
+msgid ""
+"A través del color, las prendas y el autoconocimiento, te acompaño a "
+"descubrir una imagen que te represente, te haga sentir cómoda y segura, y"
+" que te empodere en todas tus facetas."
+msgstr ""
+"A través del color, las prendas y el autoconocimiento, te acompaño a "
+"descubrir una imagen que te represente, te haga sentir cómoda y segura, y"
+" que te empodere en todas tus facetas."
+
+#: templates/about.html:25
+msgid "Eli"
+msgstr ""
+
+#: templates/about.html:26
+msgid "Eli trabajando en su estudio"
+msgstr ""
+
+#: templates/about.html:27
+msgid "Eli asesorando con paleta de colores"
+msgstr ""
+
+#: templates/about.html:28
+msgid "Eli con cliente feliz"
+msgstr ""
+
+#: templates/about.html:29
+msgid "Eli con cliente feliz 2"
+msgstr ""
+
+#: templates/about.html:34
+msgid "Formación y Certificaciones"
+msgstr "Formación y Certificaciones"
+
+#: templates/about.html:44
+msgid "Curso de Asesoría de Imagen"
+msgstr "Curso de Asesoría de Imagen"
+
+#: templates/about.html:45
+msgid "Tu Imagen Personal (TIP)"
+msgstr "Tu Imagen Personal (TIP)"
+
+#: templates/about.html:56
+msgid "Curso de Colorimetría"
+msgstr "Curso de Colorimetría"
+
+#: templates/about.html:57 templates/about.html:83 templates/about.html:95
+msgid "Escuela DM Image"
+msgstr "Escuela DM Image"
+
+#: templates/about.html:69 templates/about.html:82
+msgid "Curso de Colorimetría Avanzada"
+msgstr "Curso de Colorimetría Avanzada"
+
+#: templates/about.html:70
+msgid "Estudio Amare (LaColorimetrista)"
+msgstr "Estudio Amare (LaColorimetrista)"
+
+#: templates/about.html:94
+msgid "Curso de Morfopsicología"
+msgstr "Curso de Morfopsicología"
+
+#: templates/about.html:106
+msgid "Certificación Internacional como Asesora de Imagen y Personal Shopper"
+msgstr "Certificación Internacional como Asesora de Imagen y Personal Shopper"
+
+#: templates/about.html:107
+msgid "Academia Project Glam"
+msgstr "Academia Project Glam"
+
+#: templates/admin.html:2 templates/admin.html:4
+msgid "Panel de Administración"
+msgstr "Panel de Administración"
+
+# Etiquetas adicionales útiles
+#: templates/admin.html:9 templates/contact.html:19
+msgid "Correo Electrónico"
+msgstr "Correo Electrónico"
+
+#: templates/admin.html:10 templates/contact.html:52
+msgid "Mensaje"
+msgstr "Mensaje"
+
+#: templates/base.html:6
+msgid ""
+"Asesoría de imagen y color personal para mujeres que desean proyectar su "
+"autenticidad."
+msgstr ""
+"Soy asesora de imagen apasionada por ayudar a las mujeres a proyectar su "
+"autenticidad a través de su estilo personal."
+
+#: templates/base.html:9
+msgid "Estilo & Color"
+msgstr "Bienvenida a Estilo & Color"
+
+#: templates/base.html:33 templates/index.html:2
+msgid "Inicio"
+msgstr "Inicio"
+
+#: templates/base.html:35 templates/services.html:2 templates/services.html:7
+msgid "Servicios"
+msgstr "Servicios"
+
+#: templates/base.html:36 templates/portfolio.html:3 templates/portfolio.html:8
+msgid "Portafolio"
+msgstr "Portafolio"
+
+#: templates/base.html:37 templates/contact.html:2 templates/contact.html:7
+msgid "Contacto"
+msgstr "Contacto"
+
+#: templates/base.html:55
+msgid "Todos los derechos reservados."
+msgstr "Estilo & Color - Eli Llantén. Todos los derechos reservados."
+
+# Campo: Teléfono
+#: templates/contact.html:26
+msgid "Teléfono"
+msgstr "Teléfono"
+
+# Campo: Motivo de contacto
+#: templates/contact.html:33
+msgid "Motivo de contacto"
+msgstr "Motivo de contacto"
+
+# Opciones del motivo
+#: templates/contact.html:37
+msgid "Consulta general"
+msgstr "Consulta general"
+
+#: templates/contact.html:38
+msgid "Agendar asesoría"
+msgstr "Agendar asesoría"
+
+#: templates/contact.html:39
+msgid "Colaboración o invitación"
+msgstr "Colaboración o invitación"
+
+#: templates/contact.html:40
+msgid "Otro"
+msgstr "Otro"
+
+# Campo personalizado
+#: templates/contact.html:45
+msgid "¿Qué deseas lograr con tu imagen?"
+msgstr "¿Qué deseas lograr con tu imagen?"
+
+# Consentimiento legal
+#: templates/contact.html:61
+msgid "Acepto el uso de mis datos para ser contactada."
+msgstr "Acepto el uso de mis datos para ser contactada."
+
+#: templates/contact.html:64
+msgid "Enviar"
+msgstr "Enviar"
+
+#: templates/index.html:8
+msgid "Descubre tu mejor versión a través del estilo y color que más te representa"
+msgstr "Descubre tu mejor versión a través del estilo y color que más te representa"
+
+#: templates/index.html:9
+msgid "Asesoría profesional en imagen, colorimatría y estilo personal"
+msgstr "Asesoría profesional en imagen, colorimatría y estilo personal"
+
+#: templates/index.html:12
+msgid "Ver servicios"
+msgstr "Ver servicios"
+
+#: templates/index.html:15
+msgid "Ver portafolio"
+msgstr "Ver portafolio"
+
+#: templates/portfolio.html:9
+msgid "Conoce algunos de los proyectos y transformaciones que he acompañado."
+msgstr "Conoce algunos de los proyectos y transformaciones que he acompañado."
+
+#: templates/portfolio.html:20 templates/services.html:13
+msgid "Agenda tu asesoría"
+msgstr "Agenda tu asesoría"
+
+#: templates/services.html:9
+msgid "Asesoría de imagen personalizada"
+msgstr "Asesoría de imagen personalizada"
+
+#: templates/services.html:10
+msgid "Análisis de color"
+msgstr "Análisis de color"
+
+#: templates/services.html:11
+msgid "Talleres de estilo y autoestima"
+msgstr "Talleres de estilo y autoestima"
+
+#~ msgid "Descubre tu imagen auténtica a través"
+#~ msgstr "Descubre tu imagen auténtica a través"
+
+#~ msgid " del estilo, el color y el bienestar emocional."
+#~ msgstr " del estilo, el color y el bienestar emocional."
+
+msgid "Formación y Certificaciones"
+msgstr "Formación y Certificaciones"
+
+msgid "Curso de Asesoría de Imagen"
+msgstr "Curso de Asesoría de Imagen"
+
+msgid "Tu Imagen Personal (TIP)"
+msgstr "Tu Imagen Personal (TIP)"
+
+msgid "Curso de Colorimetría"
+msgstr "Curso de Colorimetría"
+
+msgid "Escuela DM Image"
+msgstr "Escuela DM Image"
+
+msgid "Curso de Colorimetría Avanzada"
+msgstr "Curso de Colorimetría Avanzada"
+
+msgid "Estudio Amare (LaColorimetrista)"
+msgstr "Estudio Amare (LaColorimetrista)"
+
+msgid "Curso de Morfopsicología"
+msgstr "Curso de Morfopsicología"
+
+msgid "Certificación Internacional como Asesora de Imagen y Personal Shopper"
+msgstr "Certificación Internacional como Asesora de Imagen y Personal Shopper"
+
+msgid "Academia Project Glam"
+msgstr "Academia Project Glam"
+
+msgid "Pausado"
+msgstr "Pausado"
+
+msgid "Descubre tu luz interior y hazla brillar con estilo propio"
+msgstr "Descubre tu luz interior y hazla brillar con estilo propio"
+
+msgid "Cada color que usas habla de ti, hagamos que cuente una linda historia"
+msgstr "Cada color que usas habla de ti, hagamos que cuente una linda historia"
+
+msgid "Tu imagen también es tu voz, hagamos que se escuche fuerte y clara"
+msgstr "Tu imagen también es tu voz, hagamos que se escuche fuerte y clara"
+
+msgid "Asesoría que conecta tu belleza interna con tu reflejo externo"
+msgstr "Asesoría que conecta tu belleza interna con tu reflejo externo"
+
+msgid "Empodérate desde tu estilo personal y auténtico, sin disfraces"
+msgstr "Empodérate desde tu estilo personal y auténtico, sin disfraces"
+
+msgid "Descubre historias reales de transformación y conexión con la imagen personal."
+msgstr "Descubre historias reales de transformación y conexión con la imagen personal."
+
+msgid "Alison: asesoría integral de imagen para descubrir su estilo natural que le permite diferenciarse."
+msgstr "Alison: asesoría integral de imagen para descubrir su estilo natural que le permite diferenciarse."
+
+msgid "Trabajamos juntas en definir su estilo natural para expresar confianza, armonía y autenticidad."
+msgstr "Trabajamos juntas en definir su estilo natural para expresar confianza, armonía y autenticidad."
+
+msgid "Mueve la barra para ver el resultado"
+msgstr "Mueve la barra para ver el resultado"
+
+msgid "Trinidad: colorimetría y visajismo para conocer los colores que resaltan su belleza natural"
+msgstr "Trinidad: colorimetría y visajismo para conocer los colores que resaltan su belleza natural"
+
+msgid "Descubrió que los colores del espectro verano frío realzan su belleza."
+msgstr "Descubrió que los colores del espectro verano frío realzan su belleza."
+
+msgid "Primer diagnóstico de colorimetría"
+msgstr "Primer diagnóstico de colorimetría"
+
+msgid "Análisis de visagismo: forma del rostro y armonía"
+msgstr "Análisis de visagismo: forma del rostro y armonía"
+
+msgid "Selección de paleta de colores personalizada"
+msgstr "Selección de paleta de colores personalizada"
+
+msgid "Prueba de colores cerca del rostro"
+msgstr "Prueba de colores cerca del rostro"
+
+msgid "Resultados: paleta verano frío y estilo romántico"
+msgstr "Resultados: paleta verano frío y estilo romántico"
+
+msgid "Agenda tu asesoría personalizada"
+msgstr "Agenda tu asesoría personalizada"
+
+msgid "Trinidad: colorimetría y visajismo resaltando la belleza natural del rostro, considerando el color y estructura facial"
+msgstr "Trinidad: colorimetría y visajismo resaltando la belleza natural del rostro, considerando el color y estructura facial"
+
+msgid "Descubrió temperatura, contraste, estación y sub-estación \"verano frío\"."
+msgstr "Descubrió temperatura, contraste, estación y sub-estación \"verano frío\"."
+
+msgid "Mensaje enviado con éxito"
+msgstr "Mensaje enviado con éxito"
+
+msgid "Ingrese un correo válido."
+msgstr "Ingrese un correo válido."
+
+
+msgid "Servicios"
+msgstr "Servicios"
+
+msgid "Conecta con tu esencia a través de un enfoque integral que une estilo personal, colorimetría y autoconocimiento."
+msgstr "Conecta con tu esencia a través de un enfoque integral que une estilo personal, colorimetría y autoconocimiento."
+
+msgid "Colorimetría"
+msgstr "Colorimetría"
+
+msgid "Descubre los colores que iluminan tu esencia."
+msgstr "Descubre los colores que iluminan tu esencia."
+
+msgid "Ver más"
+msgstr "Ver más"
+
+msgid "¿Qué incluye?"
+msgstr "¿Qué incluye?"
+
+msgid "Mediante el drapeado de telas, analizaremos los tonos naturales de tu piel, ojos y cabello para descubrir tu temperatura, sub-tonos y nivel de contraste."
+msgstr "Mediante el drapeado de telas, analizaremos los tonos naturales de tu piel, ojos y cabello para descubrir tu temperatura, sub-tonos y nivel de contraste."
+
+msgid "Identificaremos la paleta de colores que mejor te armoniza y aprenderás qué tonos de tintura capilar, maquillaje y metales en tus joyas armonizan contigo y realzan tu belleza natural."
+msgstr "Identificaremos la paleta de colores que mejor te armoniza y aprenderás qué tonos de tintura capilar, maquillaje y metales en tus joyas armonizan contigo y realzan tu belleza natural."
+
+msgid "También te enseñaré a combinar colores con el círculo cromático de forma simple y práctica."
+msgstr "También te enseñaré a combinar colores con el círculo cromático de forma simple y práctica."
+
+msgid "Duración estimada:"
+msgstr "Duración estimada:"
+
+msgid "75 - 120 minutos"
+msgstr "75 - 120 minutos"
+
+msgid "Sesiones:"
+msgstr "Sesiones:"
+
+msgid "1 sesión individual"
+msgstr "1 sesión individual"
+
+msgid "Modalidad:"
+msgstr "Modalidad:"
+
+msgid "Presencial u online"
+msgstr "Presencial u online"
+
+msgid "Estilo"
+msgstr "Estilo"
+
+msgid "Descubre una imagen que refleje tu autenticidad."
+msgstr "Descubre una imagen que refleje tu autenticidad."
+
+msgid "Identificarás tu estilo personal a partir de tus gustos, tu personalidad y tu forma de vida."
+msgstr "Identificarás tu estilo personal a partir de tus gustos, tu personalidad y tu forma de vida."
+
+msgid "También aprenderás a proyectar una imagen auténtica y coherente con quién eres, alineada con lo que deseas lograr."
+msgstr "También aprenderás a proyectar una imagen auténtica y coherente con quién eres, alineada con lo que deseas lograr."
+
+msgid "90 minutos"
+msgstr "90 minutos"
+
+msgid "Morfología"
+msgstr "Morfología"
+
+msgid "Viste en armonía con las formas de tu cuerpo y resalta tu belleza natural."
+msgstr "Viste en armonía con las formas de tu cuerpo y resalta tu belleza natural."
+
+msgid "El análisis de morfología corporal se realiza a través de la observación guiada y el trabajo de conexión con tu autoimagen."
+msgstr "El análisis de morfología corporal se realiza a través de la observación guiada y el trabajo de conexión con tu autoimagen."
+
+msgid "Esto permite identificar la forma de tu cuerpo y cómo potenciarlo con prendas, cortes, escotes y tejidos que favorezcan tu silueta."
+msgstr "Esto permite identificar la forma de tu cuerpo y cómo potenciarlo con prendas, cortes, escotes y tejidos que favorezcan tu silueta."
+
+msgid "75 minutos"
+msgstr "75 minutos"
+
+msgid "Visagismo"
+msgstr "Visagismo"
+
+msgid "Descubre lo que tu rostro dice de ti y cómo potenciarlo con estilo, resaltando tus rasgos con equilibrio y propósito."
+msgstr "Descubre lo que tu rostro dice de ti y cómo potenciarlo con estilo, resaltando tus rasgos con equilibrio y propósito."
+
+msgid "Aprenderás a descubrir lo que tu rostro comunica a través de sus líneas naturales y cómo resaltar su belleza."
+msgstr "Aprenderás a descubrir lo que tu rostro comunica a través de sus líneas naturales y cómo resaltar su belleza."
+
+msgid "Además, conocerás los accesorios y cortes de cabello que mejor armonizan contigo y potencian tu estilo."
+msgstr "Además, conocerás los accesorios y cortes de cabello que mejor armonizan contigo y potencian tu estilo."
+
+msgid "60–75 minutos"
+msgstr "60–75 minutos"
+
+msgid "Personal Shopper"
+msgstr "Personal Shopper"
+
+msgid "Viste con propósito, claridad y confianza."
+msgstr "Viste con propósito, claridad y confianza."
+
+msgid "Acompañamiento personalizado durante la experiencia de compra en tiendas físicas u online."
+msgstr "Acompañamiento personalizado durante la experiencia de compra en tiendas físicas u online."
+
+msgid "Asesoría en selección de prendas, accesorios y calzado según objetivos, presupuesto y estilo personal."
+msgstr "Asesoría en selección de prendas, accesorios y calzado según objetivos, presupuesto y estilo personal."
+
+msgid "180 minutos"
+msgstr "180 minutos"
+
+msgid "1 sesión individual o dúo"
+msgstr "1 sesión individual o dúo"
+
+msgid "Asesoría Integral de Imagen"
+msgstr "Asesoría Integral de Imagen"
+
+msgid "Una transformación completa y personalizada que te sube de nivel."
+msgstr "Una transformación completa y personalizada que te sube de nivel."
+
+msgid "Programa integral que combina diagnóstico de colorimetría, definición de estilo, análisis morfológico y visagismo."
+msgstr "Programa integral que combina diagnóstico de colorimetría, definición de estilo, análisis morfológico y visagismo."
+
+msgid "Incluye orientación personalizada en vestuario, maquillaje y accesorios."
+msgstr "Incluye orientación personalizada en vestuario, maquillaje y accesorios."
+
+msgid "3 a 4 sesiones de entre 60–90 minutos cada una"
+msgstr "3 a 4 sesiones de entre 60–90 minutos cada una"
+
+msgid "Paquete de sesiones individuales que incluyen: colorimetría, visagismo, morfología y estilo personal"
+msgstr "Paquete de sesiones individuales que incluyen: colorimetría, visagismo, morfología y estilo personal"
+
+msgid "Agenda tu asesoría"
+msgstr "Agenda tu asesoría"
+
+msgid "Ver menos"
+msgstr "Ver menos"
