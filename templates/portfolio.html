@@ -10,69 +10,96 @@
     </p>
   </div>
 
-<div class="section-content">
-  <div class="portfolio-wrapper">
-    <div class="portfolio-grid">
+  <div class="section-content">
+    <div class="portfolio-wrapper">
+      <div class="portfolio-grid">
 
-    <!-- === Portfolio Card con slider === -->
-    <div class="portfolio-card">
-      <div class="portfolio-card-text">
-        <h3>{{ _('Alison: asesoría integral de imagen para descubrir su estilo natural que le permite diferenciarse.') }}</h3>
-        <p>{{ _('Trabajamos juntas en definir su estilo natural para expresar confianza, armonía y autenticidad.') }}</p>
-      </div>
-
-      <div class="ba-container">
-        <div class="reveal-slider">
-          <span class="ba-label ba-label-before">{{ _('Antes') }}</span>
-          <span class="ba-label ba-label-after">{{ _('Después') }}</span>
-
-          <!-- Imagen base: ANTES -->
-          <img src="{{ url_for('static', filename='img/p1_antes.png') }}" class="slider-base" alt="{{ _('Antes') }}">
-
-          <!-- Imagen superpuesta: DESPUÉS -->
-          <div class="ba-overlay">
-            <img src="{{ url_for('static', filename='img/p1_despues.png') }}" alt="{{ _('Después') }}">
+        <!-- === ✅ Carousel Trinidad PRIMERO === -->
+        <div class="portfolio-card">
+          <div class="portfolio-card-text">
+            <h3>{{ _('Trinidad: colorimetría y visajismo resaltando la belleza natural del rostro, considerando el color y estructura facial') }}</h3>
+            <p>{{ _('Descubrió temperatura, contraste, estación y sub-estación "verano frío".') }}</p>
           </div>
 
-          <div class="ba-handle"></div>
-          <div class="slider-tooltip">🡆 {{ _('Mueve la barra para ver el resultado') }}</div>
-        </div>
-      </div>
-    </div>
+          <div class="carousel-wrapper fade-in-up" id="carouselTrinidad">
+            <div class="pause-indicator" id="pauseTrinidad">⏸ {{ _('Pausado') }}</div>
 
-  <!-- === Portfolio Card Carousel === -->
+            <!-- Flechas -->
+            <button class="carousel-nav left" id="prevTrinidad">❮</button>
+            <button class="carousel-nav right" id="nextTrinidad">❯</button>
+
+            <!-- Imágenes -->
+            <div class="carousel-slide" id="slideTrinidad">
+              <div class="carousel-item"><img src="{{ url_for('static', filename='img/trini4.jpg') }}" alt="Trinidad 1"></div>
+              <div class="carousel-item"><img src="{{ url_for('static', filename='img/trini1.jpg') }}" alt="Trinidad 2"></div>
+              <div class="carousel-item"><img src="{{ url_for('static', filename='img/trini3.jpg') }}" alt="Trinidad 3"></div>
+              <div class="carousel-item"><img src="{{ url_for('static', filename='img/trini2.jpg') }}" alt="Trinidad 4"></div>
+              <div class="carousel-item"><img src="{{ url_for('static', filename='img/trini5.jpg') }}" alt="Trinidad 5"></div>
+            </div>
+          </div>
+
+          <div class="carousel-text" id="textTrinidad"></div>
+        </div>
+
+        <!-- === Reveal Slider Alison DESPUÉS === -->
+        <div class="portfolio-card">
+          <div class="portfolio-card-text">
+            <h3>{{ _('Alison: asesoría integral de imagen para descubrir su estilo natural que le permite diferenciarse.') }}</h3>
+            <p>{{ _('Trabajamos juntas en definir su estilo natural para expresar confianza, armonía y autenticidad.') }}</p>
+          </div>
+
+          <div class="ba-container">
+            <div class="reveal-slider">
+              <span class="ba-label ba-label-before">{{ _('Antes') }}</span>
+              <span class="ba-label ba-label-after">{{ _('Después') }}</span>
+
+              <img src="{{ url_for('static', filename='img/p1_antes.png') }}" class="slider-base" alt="{{ _('Antes') }}">
+              <div class="ba-overlay">
+                <img src="{{ url_for('static', filename='img/p1_despues.png') }}" alt="{{ _('Después') }}">
+              </div>
+              <div class="ba-handle"></div>
+              <div class="slider-tooltip">🡆 {{ _('Mueve la barra para ver el resultado') }}</div>
+            </div>
+          </div>
+        </div>
+
+          <!-- === Portfolio Card Carousel 2 === -->
 <div class="portfolio-card">
   <div class="portfolio-card-text">
-    <h3>{{ _('Trinidad: colorimetría y visajismo resaltando la belleza natural del rostro, considerando el color y estructura facial') }}</h3>
-    <p>{{ _('Descubrió temperatura, contraste, estación y sub-estación "verano frío".') }}</p>
+    <h3>{{ _('Jennifer: una sesión de colorimetría para realzar su belleza natural a través de los colores') }}</h3>
+    <p>{{ _('Mediante el análisis de colorimetría, descubrió sus colores perfectos para proyectar confianza y profesionalismo.') }}</p>
   </div>
 
   <!-- Carousel específico para esta tarjeta -->
-  <div class="carousel-wrapper fade-in-up" id="carouselTrinidad">
-    <div class="pause-indicator" id="pauseTrinidad">⏸ {{ _('Pausado') }}</div>
+  <div class="carousel-wrapper fade-in-up" id="carouselFlorencia">
+    <div class="pause-indicator" id="pauseFlorencia">⏸ {{ _('Pausado') }}</div>
 
     <!-- Flechas -->
-    <button class="carousel-nav left" id="prevTrinidad">❮</button>
-    <button class="carousel-nav right" id="nextTrinidad">❯</button>
+    <button class="carousel-nav left" id="prevFlorencia">❮</button>
+    <button class="carousel-nav right" id="nextFlorencia">❯</button>
 
     <!-- Imágenes -->
-    <div class="carousel-slide" id="slideTrinidad">
-      <div class="carousel-item"><img src="{{ url_for('static', filename='img/trini4.jpg') }}" alt="Trinidad 1"></div>
-      <div class="carousel-item"><img src="{{ url_for('static', filename='img/trini1.jpg') }}" alt="Trinidad 2"></div>
-      <div class="carousel-item"><img src="{{ url_for('static', filename='img/trini3.jpg') }}" alt="Trinidad 3"></div>
-      <div class="carousel-item"><img src="{{ url_for('static', filename='img/trini2.jpg') }}" alt="Trinidad 4"></div>
-      <div class="carousel-item"><img src="{{ url_for('static', filename='img/trinidad5.jpg') }}" alt="Trinidad 5"></div>
+    <div class="carousel-slide" id="slideFlorencia">
+      <div class="carousel-item"><img src="{{ url_for('static', filename='img/colori1.png') }}" alt="Florencia 1"></div>
+      <div class="carousel-item"><img src="{{ url_for('static', filename='img/colori2.png') }}" alt="Florencia 2"></div>
+      <div class="carousel-item"><img src="{{ url_for('static', filename='img/colori3.png') }}" alt="Florencia 3"></div>
+      <div class="carousel-item"><img src="{{ url_for('static', filename='img/colori4.png') }}" alt="Florencia 4"></div>
+      <div class="carousel-item"><img src="{{ url_for('static', filename='img/colori5.png') }}" alt="Florencia 5"></div>
+      <div class="carousel-item"><img src="{{ url_for('static', filename='img/colori6.png') }}" alt="Florencia 6"></div>
     </div>
   </div>
 
   <!-- Texto sincronizado -->
-  <div class="carousel-text" id="textTrinidad"></div>
+  <div class="carousel-text" id="textFlorencia"></div>
 </div>
 
-  </div> <!-- cierre .portfolio-grid -->
-</div> <!-- cierre .section-content -->
 
-    <!-- Textos de cada slide carousel -->
+      </div> <!-- .portfolio-grid -->
+    </div> <!-- .portfolio-wrapper -->
+  </div> <!-- .section-content -->
+</section>
+
+<!-- JSON del texto sincronizado del carousel trinidad-->
 <script id="textosTrinidad" type="application/json">
 [
   "{{ _('Primer diagnóstico de colorimetría') }}",
@@ -81,18 +108,28 @@
   "{{ _('Prueba de colores cerca del rostro') }}",
   "{{ _('Resultados: paleta verano frío y rostro redondo') }}"
 ]
-  </script>
- </div>
-</section>
+</script>
 
-    <!-- === Call to action === -->
-    <div class="cta-container">
-      <a href="{{ url_for('contact', lang=get_locale()) }}" class="hero-button">
-        {{ _('Agenda tu asesoría personalizada') }}
-      </a>
-    </div>
+    <!-- JSON del texto sincronizado del carousel 2-->
+<script id="textosFlorencia" type="application/json">
+[
+  "{{ _('Análisis de temperatura de color') }}",
+  "{{ _('Identificación de paleta de colores ideales') }}",
+  "{{ _('Evaluación de temperatura y subestación') }}",
+  "{{ _('Paleta personalizada y prueba de color cercana al rostro') }}",
+  "{{ _('Combinación de colores con círculo cromático') }}",
+  "{{ _('Confirmación de temperatura y subestación') }}"
+]
+</script>
 
-<!-- ✅ JavaScript Reveal Slider -->
+<!-- === Call to action === -->
+<div class="cta-container">
+  <a href="{{ url_for('contact', lang=get_locale()) }}" class="hero-button">
+    {{ _('Agenda tu asesoría personalizada') }}
+  </a>
+</div>
+
+<!-- ✅ JavaScript Reveal Slider intacto -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const sliders = document.querySelectorAll(".reveal-slider");
@@ -100,139 +137,115 @@ document.addEventListener("DOMContentLoaded", function () {
   sliders.forEach(slider => {
     const overlay = slider.querySelector(".ba-overlay");
     const handle = slider.querySelector(".ba-handle");
-
     if (!overlay || !handle) return;
 
     let isDragging = false;
 
     setTimeout(() => {
-  let percent = 50;
-  let direction = 1;
-  const overlay = slider.querySelector(".ba-overlay");
-  const handle = slider.querySelector(".ba-handle");
-  handle.classList.add("pulsing");
+      let percent = 50;
+      let direction = 1;
+      handle.classList.add("pulsing");
 
+      const anim = setInterval(() => {
+        percent += direction * 2;
+        if (percent >= 70) direction = -1;
+        if (percent <= 0) {
+          clearInterval(anim);
+          percent = 0;
+        }
+        overlay.style.width = `${percent}%`;
+        handle.style.left = `${percent}%`;
+        updateActiveLabel(percent);
+      }, 20);
+    }, 600);
 
-  const anim = setInterval(() => {
-    percent += direction * 2;
-    if (percent >= 70) direction = -1;
-    if (percent <= 0) {
-      clearInterval(anim);
-      percent = 0; // Finaliza mostrando solo "Antes"
-    }
-
-    overlay.style.width = `${percent}%`;
-    handle.style.left = `${percent}%`;
-    updateActiveLabel(percent);
-  }, 20);
-}, 600);
-
-  // Agrega clase para activar animación CSS
-slider.classList.add("animate-init");
-
-// Desactiva la clase luego de que termine la animación (para evitar conflictos)
-setTimeout(() => {
-  slider.classList.remove("animate-init");
-
-  // Asegura estado final (por si el navegador no aplicó 100% del keyframe)
-  overlay.style.width = "0%";
-  handle.style.left = "0%";
-  updateActiveLabel(0);
-}, 2900); // un poco más que la duración de la animación
-
+    slider.classList.add("animate-init");
+    setTimeout(() => {
+      slider.classList.remove("animate-init");
+      overlay.style.width = "0%";
+      handle.style.left = "0%";
+      updateActiveLabel(0);
+    }, 2900);
 
     const updateSlider = (x) => {
       const rect = slider.getBoundingClientRect();
       let offset = x - rect.left;
-const min =0; // mínimo 10px desde el borde izquierdo
-const max = rect.width - 10; // máximo 10px antes del borde derecho
-offset = Math.max(min, Math.min(offset, max));
-
+      const min = 0;
+      const max = rect.width - 10;
+      offset = Math.max(min, Math.min(offset, max));
       const percent = (offset / rect.width) * 100;
       overlay.style.width = `${percent}%`;
       handle.style.left = `${percent}%`;
       updateActiveLabel(percent);
     };
 
-    // ✅ Agrega referencia a los labels
-const labelBefore = slider.querySelector(".ba-label-before");
-const labelAfter = slider.querySelector(".ba-label-after");
+    const labelBefore = slider.querySelector(".ba-label-before");
+    const labelAfter = slider.querySelector(".ba-label-after");
 
-// ✅ Función para resaltar el label activo según posición
-function updateActiveLabel(percent) {
-  if (percent < 20) {
-    labelBefore.classList.add("active");
-    labelAfter.classList.remove("active");
-  } else if (percent > 80) {
-    labelAfter.classList.add("active");
-    labelBefore.classList.remove("active");
-  } else {
-    labelBefore.classList.remove("active");
-    labelAfter.classList.remove("active");
-  }
-}
+    function updateActiveLabel(percent) {
+      if (percent < 20) {
+        labelBefore.classList.add("active");
+        labelAfter.classList.remove("active");
+      } else if (percent > 80) {
+        labelAfter.classList.add("active");
+        labelBefore.classList.remove("active");
+      } else {
+        labelBefore.classList.remove("active");
+        labelAfter.classList.remove("active");
+      }
+    }
 
     const startDrag = () => isDragging = true;
     const stopDrag = () => isDragging = false;
 
     handle.addEventListener("mousedown", startDrag);
     handle.addEventListener("touchstart", startDrag);
-
     window.addEventListener("mouseup", stopDrag);
     window.addEventListener("touchend", stopDrag);
 
     window.addEventListener("mousemove", e => {
       if (isDragging) updateSlider(e.pageX);
     });
-
     window.addEventListener("touchmove", e => {
       if (isDragging) updateSlider(e.touches[0].pageX);
     });
 
-    // Posición inicial
     overlay.style.width = "50%";
     handle.style.left = "50%";
-    // Animación inicial automática
-setTimeout(() => {
-  let percent = 50;
-  let direction = 1;
 
-  const anim = setInterval(() => {
-    percent += direction * 1;
+    setTimeout(() => {
+      let percent = 50;
+      let direction = 1;
+      const anim = setInterval(() => {
+        percent += direction * 1;
+        if (percent >= 70) direction = -1;
+        if (percent <= 0) {
+          clearInterval(anim);
+          overlay.style.width = "0%";
+          handle.style.left = "0%";
+          updateActiveLabel(0);
+          return;
+        }
+        overlay.style.width = `${percent}%`;
+        handle.style.left = `${percent}%`;
+        updateActiveLabel(percent);
+      }, 25);
+    }, 600);
 
-    if (percent >= 70) direction = -1;
+    const stopPulse = () => {
+      handle.classList.remove("pulsing");
+      window.removeEventListener("mousemove", stopPulse);
+      window.removeEventListener("touchmove", stopPulse);
+    };
 
-    if (percent <= 0) {
-      clearInterval(anim);
-
-      // ✅ Forzar la posición final al 0%
-      overlay.style.width = "0%";
-      handle.style.left = "0%";
-      updateActiveLabel(0);
-      return;
-    }
-
-    overlay.style.width = `${percent}%`;
-    handle.style.left = `${percent}%`;
-    updateActiveLabel(percent);
-  }, 25);
-}, 600); // Espera inicial antes de empezar la animación
-
-      const stopPulse = () => {
-  handle.classList.remove("pulsing");
-  window.removeEventListener("mousemove", stopPulse);
-  window.removeEventListener("touchmove", stopPulse);
-};
-
-window.addEventListener("mousemove", stopPulse);
-window.addEventListener("touchmove", stopPulse);
-
-
+    window.addEventListener("mousemove", stopPulse);
+    window.addEventListener("touchmove", stopPulse);
   });
 });
 </script>
 
-    <script>
+<!-- ✅ Carousel Script intacto -->
+<script>
   function iniciarCarouselPersonalizado(wrapperId, slideId, textId, prevId, nextId, pauseId, jsonId) {
     const textos = JSON.parse(document.getElementById(jsonId).textContent.trim());
     const slide = document.getElementById(slideId);
@@ -293,11 +306,16 @@ window.addEventListener("touchmove", stopPulse);
     startCarousel();
   }
 
-  // Inicializa el carousel de Trinidad
   iniciarCarouselPersonalizado(
     'carouselTrinidad', 'slideTrinidad', 'textTrinidad',
     'prevTrinidad', 'nextTrinidad', 'pauseTrinidad', 'textosTrinidad'
   );
+
+  iniciarCarouselPersonalizado(
+  'carouselFlorencia', 'slideFlorencia', 'textFlorencia',
+  'prevFlorencia', 'nextFlorencia', 'pauseFlorencia', 'textosFlorencia'
+);
+
 </script>
 
 {% endblock %}

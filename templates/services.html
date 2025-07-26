@@ -3,19 +3,174 @@
 
 {% block content %}
 <section id="servicios" class="services-section">
-  <div class="section-content">
-    <h2>{{ _('Servicios') }}</h2>
-    <ul>
-      <li>{{ _('Asesoría de imagen personalizada') }}</li>
-      <li>{{ _('Análisis de color') }}</li>
-      <li>{{ _('Talleres de estilo y autoestima') }}</li>
-    </ul>
-       </div>
-    </section>
+  <div class="section-content servicios-hero-content">
+    <h2 class="section-title servicios-hero-title">{{ _('Servicios') }}</h2>
+    <p class="section-subtitle servicios-hero-subtitle">
+      {{ _('Conecta con tu esencia a través de un enfoque integral que une estilo personal, colorimetría y autoconocimiento.') }}
+    </p>
+  </div>
 
-    <div class="hero-buttons">
-    <a href="{{ url_for('contact') }}" class="hero-button">{{ _('Agenda tu asesoría') }}</a>
+        <div class="services-grid">
+
+            <!-- 1. Colorimetría -->
+            <div class="service-card fade-in-up">
+                <div class="icon-wrapper">
+                    <img src="{{ url_for('static', filename='img/skyblue.png') }}" class="icon-background" alt="Fondo Acuarela">
+                    <img src="{{ url_for('static', filename='img/colorimetry.png') }}" class="icon-foreground" alt="Ícono Colorimetría">
+                </div>
+                <h3>{{ _('Colorimetría') }}</h3>
+                <p>{{ _('Descubre los colores que iluminan tu esencia.') }}</p>
+
+                <button class="toggle-details-button" onclick="toggleServiceDetails(this)">
+                    {{ _('Ver más') }}
+                </button>
+
+                <div class="service-details">
+                    <p><strong>{{ _('¿Qué incluye?') }}</strong></p>
+                    <p>{{ _('Mediante el drapeado de telas, analizaremos los tonos naturales de tu piel, ojos y cabello para descubrir tu temperatura, sub-tonos y nivel de contraste.') }}</p>
+                    <p>{{ _('Identificaremos la paleta de colores que mejor te armoniza y aprenderás qué tonos de tintura capilar, maquillaje y metales en tus joyas armonizan contigo y realzan tu belleza natural.') }}</p>
+                    <p>{{ _('También te enseñaré a combinar colores con el círculo cromático de forma simple y práctica.') }}</p>
+                    <p><strong>{{ _('Duración estimada:') }}</strong> {{ _('75 - 120 minutos') }}</p>
+                    <p><strong>{{ _('Sesiones:') }}</strong> {{ _('1 sesión individual') }}</p>
+                    <p><strong>{{ _('Modalidad:') }}</strong> {{ _('Presencial u online') }}</p>
+                </div>
+            </div>
+
+            <!-- 2. Estilo -->
+            <div class="service-card fade-in-up">
+                <div class="icon-wrapper">
+                    <img src="{{ url_for('static', filename='img/menta.png') }}" alt="Fondo Acuarela" class="icon-background">
+                    <img src="{{ url_for('static', filename='img/style.png') }}" alt="Ícono Estilo" class="icon-foreground">
+                </div>
+                <h3>{{ _('Estilo') }}</h3>
+                <p>{{ _('Descubre una imagen que refleje tu autenticidad.') }}</p>
+
+                <button class="toggle-details-button" onclick="toggleServiceDetails(this)">
+                    {{ _('Ver más') }}
+                </button>
+
+                <div class="service-details">
+                    <p><strong>{{ _('¿Qué incluye?') }}</strong></p>
+                    <p>{{ _('Identificarás tu estilo personal a partir de tus gustos, tu personalidad y tu forma de vida.') }}</p>
+                    <p>{{ _('También aprenderás a proyectar una imagen auténtica y coherente con quién eres, alineada con lo que deseas lograr.') }}</p>
+                    <p><strong>{{ _('Duración estimada:') }}</strong> {{ _('90 minutos') }}</p>
+                    <p><strong>{{ _('Sesiones:') }}</strong> {{ _('1 sesión individual') }}</p>
+                    <p><strong>{{ _('Modalidad:') }}</strong> {{ _('Presencial u online') }}</p>
+                </div>
+            </div>
+
+            <!-- 3. Morfología -->
+            <div class="service-card fade-in-up">
+                <div class="icon-wrapper">
+                    <img src="{{ url_for('static', filename='img/durazno.png') }}" alt="Fondo Acuarela" class="icon-background">
+                    <img src="{{ url_for('static', filename='img/morphology.png') }}" alt="Ícono Morfología" class="icon-foreground">
+                </div>
+                <h3>{{ _('Morfología') }}</h3>
+                <p>{{ _('Viste en armonía con las formas de tu cuerpo y resalta tu belleza natural.') }}</p>
+
+                <button class="toggle-details-button" onclick="toggleServiceDetails(this)">
+                    {{ _('Ver más') }}
+                </button>
+
+                <div class="service-details">
+                    <p><strong>{{ _('¿Qué incluye?') }}</strong></p>
+                    <p>{{ _('El análisis de morfología corporal se realiza a través de la observación guiada y el trabajo de conexión con tu autoimagen.') }}</p>
+                    <p>{{ _('Esto permite identificar la forma de tu cuerpo y cómo potenciarlo con prendas, cortes, escotes y tejidos que favorezcan tu silueta.') }}</p>
+                    <p><strong>{{ _('Duración estimada:') }}</strong> {{ _('75 minutos') }}</p>
+                    <p><strong>{{ _('Sesiones:') }}</strong> {{ _('1 sesión individual') }}</p>
+                    <p><strong>{{ _('Modalidad:') }}</strong> {{ _('Presencial u online') }}</p>
+                </div>
+            </div>
+
+            <!-- 4. Visagismo -->
+            <div class="service-card fade-in-up">
+                <div class="icon-wrapper">
+                    <img src="{{ url_for('static', filename='img/lila.png') }}" alt="Fondo Acuarela" class="icon-background">
+                    <img src="{{ url_for('static', filename='img/visagism.png') }}" alt="Ícono Visagismo" class="icon-foreground">
+                </div>
+                <h3>{{ _('Visagismo') }}</h3>
+                <p>{{ _('Descubre lo que tu rostro dice de ti y cómo potenciarlo con estilo, resaltando tus rasgos con equilibrio y propósito.') }}</p>
+
+                <button class="toggle-details-button" onclick="toggleServiceDetails(this)">
+                    {{ _('Ver más') }}
+                </button>
+
+                <div class="service-details">
+                    <p><strong>{{ _('¿Qué incluye?') }}</strong></p>
+                    <p>{{ _('Aprenderás a descubrir lo que tu rostro comunica a través de sus líneas naturales y cómo resaltar su belleza.') }}</p>
+                    <p>{{ _('Además, conocerás los accesorios y cortes de cabello que mejor armonizan contigo y potencian tu estilo.') }}</p>
+                    <p><strong>{{ _('Duración estimada:') }}</strong> {{ _('60–75 minutos') }}</p>
+                    <p><strong>{{ _('Sesiones:') }}</strong> {{ _('1 sesión individual') }}</p>
+                    <p><strong>{{ _('Modalidad:') }}</strong> {{ _('Presencial u online') }}</p>
+                </div>
+            </div>
+
+            <!-- 5. Personal Shopper -->
+            <div class="service-card fade-in-up">
+                <div class="icon-wrapper">
+                    <img src="{{ url_for('static', filename='img/rosa.png') }}" alt="Fondo Acuarela" class="icon-background">
+                    <img src="{{ url_for('static', filename='img/shopper.png') }}" alt="Ícono Personal Shopper" class="icon-foreground">
+                </div>
+                <h3>{{ _('Personal Shopper') }}</h3>
+                <p>{{ _('Viste con propósito, claridad y confianza.') }}</p>
+
+                <button class="toggle-details-button" onclick="toggleServiceDetails(this)">
+                    {{ _('Ver más') }}
+                </button>
+
+                <div class="service-details">
+                    <p><strong>{{ _('¿Qué incluye?') }}</strong></p>
+                    <p>{{ _('Acompañamiento personalizado durante la experiencia de compra en tiendas físicas u online.') }}</p>
+                    <p>{{ _('Asesoría en selección de prendas, accesorios y calzado según objetivos, presupuesto y estilo personal.') }}</p>
+                    <p><strong>{{ _('Duración estimada:') }}</strong> {{ _('180 minutos') }}</p>
+                    <p><strong>{{ _('Sesiones:') }}</strong> {{ _('1 sesión individual o dúo') }}</p>
+                    <p><strong>{{ _('Modalidad:') }}</strong> {{ _('Presencial u online') }}</p>
+                </div>
+            </div>
+
+            <!-- 6. Asesoría Integral -->
+            <div class="service-card fade-in-up featured">
+                <div class="icon-wrapper">
+                    <img src="{{ url_for('static', filename='img/skyblue.png') }}" alt="Fondo Acuarela" class="icon-background">
+                    <img src="{{ url_for('static', filename='img/services_blossom.png') }}" alt="Ícono Asesoría Integral" class="icon-foreground">
+                </div>
+                <h3>{{ _('Asesoría Integral de Imagen') }}</h3>
+                <p>{{ _('Una transformación completa y personalizada que te sube de nivel.') }}</p>
+
+                <button class="toggle-details-button" onclick="toggleServiceDetails(this)">
+                    {{ _('Ver más') }}
+                </button>
+
+                <div class="service-details">
+                    <p><strong>{{ _('¿Qué incluye?') }}</strong></p>
+                    <p>{{ _('Programa integral que combina diagnóstico de colorimetría, definición de estilo, análisis morfológico y visagismo.') }}</p>
+                    <p>{{ _('Incluye orientación personalizada en vestuario, maquillaje y accesorios.') }}</p>
+                    <p><strong>{{ _('Duración estimada:') }}</strong> {{ _('3 a 4 sesiones de entre 60–90 minutos cada una') }}</p>
+                    <p><strong>{{ _('Sesiones:') }}</strong> {{ _('Paquete de sesiones individuales que incluyen: colorimetría, visagismo, morfología y estilo personal') }}</p>
+                    <p><strong>{{ _('Modalidad:') }}</strong> {{ _('Presencial u online') }}</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div class="hero-buttons">
+    <a href="{{ url_for('contact', lang=get_locale()) }}" class="hero-button">
+        {{ _('Agenda tu asesoría') }}
+    </a>
 </div>
 
+<script>
+    function toggleServiceDetails(button) {
+        const card = button.closest('.service-card');
+        const details = card.querySelector('.service-details');
+        card.classList.toggle('open');
+        if (card.classList.contains('open')) {
+            button.innerText = '{{ _("Ver menos") }}';
+        } else {
+            button.innerText = '{{ _("Ver más") }}';
+        }
+    }
+</script>
 {% endblock %}
-

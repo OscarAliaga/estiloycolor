@@ -5,6 +5,20 @@
 <section id="contacto" class="contact-section">
   <div class="contact-container">
     <h1 class="contact-title">{{ _('Contacto') }}</h1>
+
+    <!-- MENSAJE DE ÉXITO -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="flash-messages">
+          {% for message in messages %}
+            <div class="alert alert-success">
+              ✅ {{ message }}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
     <form method="POST" action="{{ url_for('contact', lang=get_locale()) }}" class="contact-form">
       {{ form.hidden_tag() }}
 
@@ -54,11 +68,35 @@
         {{ _('Acepto el uso de mis datos para ser contactada.') }}
       </label>
 
+      <!-- Botón Enviar -->
       <button type="submit" class="contact-button">{{ _('Enviar') }}</button>
     </form>
   </div>
 </section>
+
+<!-- Script para ocultar mensajes flash -->
+<script>
+  setTimeout(function () {
+    const alerts = document.querySelectorAll('.alert');
+    alerts.forEach(alert => alert.style.display = 'none');
+  }, 5000);
+</script>
+
+<!-- Estilos para mensaje flash -->
+<style>
+  .flash-messages {
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .alert {
+    display: inline-block;
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.5rem;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    font-weight: 500;
+  }
+</style>
 {% endblock %}
-
-
-
