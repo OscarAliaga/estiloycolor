@@ -28,7 +28,8 @@ def get_locale():
     return session.get('lang', app.config['BABEL_DEFAULT_LOCALE'])
 
 
-babel = Babel(app, locale_selector=get_locale)
+translations_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'translations')
+babel = Babel(app, locale_selector=get_locale, translation_directories=translations_path)
 app.jinja_env.globals['get_locale'] = get_locale  # Hace get_locale disponible en las plantillas Jinja
 
 # DB y Mail
