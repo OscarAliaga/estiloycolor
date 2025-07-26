@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1924fea6-b47c-4610-ac9b-e49255c23965" name="Changes" comment="fontawesome icons">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+    <list default="true" id="1924fea6-b47c-4610-ac9b-e49255c23965" name="Changes" comment="Languages and Icons">
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +118,7 @@
       <workItem from="1752804989612" duration="7965000" />
       <workItem from="1752983748841" duration="16785000" />
       <workItem from="1753214396621" duration="73096000" />
-      <workItem from="1753466049035" duration="34609000" />
+      <workItem from="1753466049035" duration="34925000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;Estructura base proyecto página web Color y Estilo&quot;">
       <option name="closed" value="true" />
@@ -233,7 +232,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753508716408</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Languages and Icons">
+      <option name="closed" value="true" />
+      <created>1753509605781</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1753509605781</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,9 +280,10 @@
     <MESSAGE value="Touch-ups &amp; contact activation" />
     <MESSAGE value="Revisiones de seguridad y en pantallas pequeñas pre salida en vivo" />
     <MESSAGE value="fontawesome icons" />
-    <option name="LAST_COMMIT_MESSAGE" value="fontawesome icons" />
+    <MESSAGE value="Languages and Icons" />
+    <option name="LAST_COMMIT_MESSAGE" value="Languages and Icons" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/estiloycolor$app.coverage" NAME="app Coverage Results" MODIFIED="1753509218583" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/estiloycolor$app.coverage" NAME="app Coverage Results" MODIFIED="1753509615294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
