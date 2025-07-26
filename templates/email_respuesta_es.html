@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gracias por tu mensaje</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      padding: 20px;
+    }
+    .container {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: auto;
+    }
+    h1 {
+      color: #5e548e;
+    }
+    p {
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>¡Gracias por tu mensaje!</h1>
+    <p>Hola {{ name }},</p>
+    <p>Hemos recibido tu mensaje con el asunto: <strong>{{ subject }}</strong>.</p>
+    <p>Te responderemos lo antes posible. Este es el mensaje que recibimos:</p>
+    <blockquote>{{ message }}</blockquote>
+    <p>Gracias por confiar en Estilo &amp; Color.</p>
+  </div>
+</body>
+</html>
